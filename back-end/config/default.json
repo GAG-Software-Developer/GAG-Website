@@ -1,0 +1,4 @@
+{
+    "urlMongoDB": "mongodb+srv://galihsamudras:doremimiredo@gag-website.d67jo.gcp.mongodb.net/GAG-Website?retryWrites=true&w=majority",
+    "jwtSecret": "doremimiredo"
+}
