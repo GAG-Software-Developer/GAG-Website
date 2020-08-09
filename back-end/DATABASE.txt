@@ -1,0 +1,210 @@
+Database Schema
+
+--------------USERS---------------                            
+{                                                                   
+    1: {                                                            
+        "name": "Giovanni Tjahjono",
+        "email: "ivangiovn@gmail.com",
+        "password": "xxxxxxxxxxxx"
+    }
+    2: {
+        "name": "Galih Samudro S.",
+        "email: "galih.samudras@gmail.com",
+        "password": "xxxxxxxxxxxx"
+    }
+}                                                               
+
+--------------PROJEK---------------
+{
+    Ivan: {
+        "title_post": "Cryptosystem",
+        "image_post: "image.jpg",
+        "quote_post": "xxxxxxxxxxxx",
+        "year_of_post": "2018",
+        "owner_id_post": "1",
+        "owner_name_post": "Giovanni Tjahjono",
+        "attribute": ["Java", "PHP", "MySQL"].
+    }
+    2: {
+        "title_post": "Lumbung Seni",
+        "image_post: "image.jpg",
+        "quote_post": "xxxxxxxxxxxx",
+        "year_of_post": "2018",
+        "owner_id_post": "2",
+        "owner_name_post": "Galih Samudro S.",
+        "attribute": ["HTML", "CSS", "Laravel (PHP)", "MySQL"]
+    }
+}
+
+Komen
+{
+    {
+        id_post: 1,
+        isi_komen: bagus
+    }
+}
+--------------PROJEK_DETAILS---------------
+
+
+
+{
+    hsudhauisd893: {
+        id_post: Ivan,
+        isi: {
+            partOne: {
+                "image": "image.jpg",
+                "text": "this is the first paragraph"
+            },
+            partTwo: {
+                "image": "image.jpg",
+                "text": "this is the second paragraph"
+            },
+            partThird: {
+                "image": "image.jpg",
+                "text": "this is the third paragraph"
+            }
+        }
+    }
+    2: {
+        partOne: {
+            "image": "image.jpg",
+            "text": "this is the first paragraph"
+        }
+        partTwo: {
+            "image": "image.jpg",
+            "text": "this is the second paragraph"
+        }
+        partThird: {
+            "image": "image.jpg",
+            "text": "this is the third paragraph"
+        }
+    }
+}
+
+//Cache function to make the loading more fast
+
+// rest = SELECT * FROM restaurant
+// Halaman 1
+- mcd + alamat (rest.nama + rest.alamat)
+- kfc + alamat (rest.nama + rest.alamat)
+- bk + alamat (rest.nama + rest.alamat)
+
+// rest = SELECT * FROM restaurant
+// Halaman 2
+- mcd + alamat + 2 reviews (rest.nama + rest.alamat + rest.review)
+- kfc + alamat + 2 reviews
+- bk + alamat + 2 reviews
+
+// Nambah restaurant
+let nama = "yoshinoya" // let nama = req.body.nama
+let alamat = "TP" 
+let reviews = { 1: {"nama": "enak"}, 2: {"nama": "enak"} }
+
+
+group update = {
+    temuin semua review yg idnya x dan update
+    temuin semua review yg idnya x dan update
+    temuin semua review yg idnya x dan update
+}
+
+Restaurant: {
+    "A123MCD": {
+        "nama": "mcd",
+        "alamat": "jalan sana",
+        "reviews": {
+            1: {
+                "nama": "sadsa"
+            },
+            2: {
+                "mama": "saosk"
+            }
+        }
+    },
+    "B": {
+        "nama": "KFC",
+        "alamat": "jalan sana"
+    },
+    "C": {
+        "nama": "Wendys",
+        "alamat": "jalan sana"
+    },
+    "D": {
+        "nama": "BK",
+        "alamat": "jalan sana"
+    }
+}
+
+Review: {
+    "A123MCD": {
+        "review": {
+            1: {
+                "review" : "adsa"
+            },
+            2: {
+                "review" : "bagus"
+            },
+            3: {
+                "review" : "bagus"
+            },
+        }
+    },
+    "B": {
+        "id_restaurant": "mcd",
+        "review": {
+            1: {
+                "review" : "bagus"
+            },
+            2: {
+                "review" : "bagus"
+            },
+            3: {
+                "review" : "bagus"
+            },
+        }
+    },
+    "C": {
+         "id_restaurant": "mcd",
+         "review": {
+            1: {
+                "review" : "bagus"
+            },
+            2: {
+                "review" : "bagus"
+            },
+            3: {
+                "review" : "bagus"
+            },
+        }
+    }
+}
+
+let 1 = select * from review where id_rest = mcd //details
+let 2 = select * from review where id_rest = mcd //review 
+
+return 1 && 2
+
+
+- mcd
+- kfc
+- bk
+
+id mcd -> post -> "1234" -> select from review where id = "1234"
+
+id BK -> post ->"D" -> select from review where id = "D" -> front-end (sudah ada d halaman review)
+
+id BK, review, user 
+
+
+Nota: {
+    1: {
+        id_user: "1",
+        id_restaurant: "A123MCD",
+        nama_restaurant: "mcd"
+        harga: 1000,
+        review: "bagus"
+    }
+}
+
+
+nama_restaurant, menu, harga, review
+
