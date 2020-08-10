@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Database Schema Portofolio
+=======
+Database Schema
+>>>>>>> 0126c047dadd1e547b84b1bc7d6bfb54ca4d0321
 
 --------------USERS---------------                            
 {                                                                   
@@ -14,9 +18,15 @@ Database Schema Portofolio
     }
 }                                                               
 
+<<<<<<< HEAD
 --------------POSTS---------------
 {
     1: {
+=======
+--------------PROJEK---------------
+{
+    Ivan: {
+>>>>>>> 0126c047dadd1e547b84b1bc7d6bfb54ca4d0321
         "title_post": "Cryptosystem",
         "image_post: "image.jpg",
         "quote_post": "xxxxxxxxxxxx",
@@ -24,12 +34,15 @@ Database Schema Portofolio
         "owner_id_post": "1",
         "owner_name_post": "Giovanni Tjahjono",
         "attribute": ["Java", "PHP", "MySQL"].
+<<<<<<< HEAD
         "review": {
             "1": {
                 "id_review": "1".
                 "isi_review": "bagus"
             }
         }
+=======
+>>>>>>> 0126c047dadd1e547b84b1bc7d6bfb54ca4d0321
     }
     2: {
         "title_post": "Lumbung Seni",
@@ -42,6 +55,7 @@ Database Schema Portofolio
     }
 }
 
+<<<<<<< HEAD
 --------------POST_DETAILS---------------
 
 {
@@ -57,6 +71,35 @@ Database Schema Portofolio
         partThird: {
             "image": "image.jpg",
             "text": "this is the third paragraph"
+=======
+Komen
+{
+    {
+        id_post: 1,
+        isi_komen: bagus
+    }
+}
+--------------PROJEK_DETAILS---------------
+
+
+
+{
+    hsudhauisd893: {
+        id_post: Ivan,
+        isi: {
+            partOne: {
+                "image": "image.jpg",
+                "text": "this is the first paragraph"
+            },
+            partTwo: {
+                "image": "image.jpg",
+                "text": "this is the second paragraph"
+            },
+            partThird: {
+                "image": "image.jpg",
+                "text": "this is the third paragraph"
+            }
+>>>>>>> 0126c047dadd1e547b84b1bc7d6bfb54ca4d0321
         }
     }
     2: {
