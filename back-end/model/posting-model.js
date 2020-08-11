@@ -11,7 +11,7 @@ const postingSchema = mongoose.Schema({
     owner_id_posting: { type: String, required: true },
     owner_name_posting: { type: String, required: true },
     description_posting: { type: String, required: true },
-    skills: { type: String, required: true }
+    attributes: { type: [String], required: true }
 });
 //// export untuk model 
 module.exports = mongoose.model('posting', postingSchema);

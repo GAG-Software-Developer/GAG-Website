@@ -15,7 +15,7 @@ export default class Navigasi extends Component {
                     <Nav.Link style={text_selected} href="#home">Explore</Nav.Link>
                     <Nav.Link style={text_color} href="#features">Technology</Nav.Link>
                     <Nav.Link style={text_color} href="#pricing">Tutorial</Nav.Link>
-                    <Nav.Link style={text_color} href="#pricing">WhoAreWe??</Nav.Link>
+                    <Nav.Link style={text_color} href="#pricing">About</Nav.Link>
                 </Nav>
             </Navbar>
         )

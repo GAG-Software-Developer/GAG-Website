@@ -21,6 +21,7 @@ router.post('/posting-create', (request, response) => {
             description_posting: request.body.description_posting,
             total_view_posting: request.body.total_view_posting
         });
+
         posting.save();
         response.send(posting);
     } catch (error) {
@@ -49,10 +50,11 @@ router.get('/posting-read', async (request, response) => {
     //response.send(read_posting);
 });
 router.post('/posting-update', async (request, response) => {
-    const id = "5f2956623a0db641cc4a556e";
-    //await posting_model.findByIdAndUpdate(id, { "owner_posting": "cah" });
-    await posting_model.findByIdAndUpdate(id, { $set: { "owner_posting": "son" } });
-    response.send('success');
+    // const id = "5f2956623a0db641cc4a556e";
+    // //await posting_model.findByIdAndUpdate(id, { "owner_posting": "cah" });
+    // await posting_model.findByIdAndUpdate(id, { $set: { "owner_posting": "son" } });
+    // response.send('success');
+    console.log(Request.body);
 });
 router.post('/posting-delete', async (request, response) => {
     const id = "5f2a2134e96b75448c9ba7ea";
