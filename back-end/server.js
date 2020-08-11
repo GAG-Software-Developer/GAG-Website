@@ -15,4 +15,4 @@ app.get('/test', (request, response) => {
     response.send('okey');
 });
 //cara memanggil route
-app.use('/api', require('./route/posting'));
+app.use('/posting', require('./route/posting'));
