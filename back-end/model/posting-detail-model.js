@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 //     title_posting: { type: String, required: true , default: 'aktif'}
 // });
 const postingSchema = mongoose.Schema({
-    owner_id_posting_detail: { type: String, required: true },
+    posting_id: { type: String, required: true },
     posting_detail: [{
         part_of_detail: [{
             image_detail: {
