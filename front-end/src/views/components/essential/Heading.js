@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Alert, Container, Card } from 'react-bootstrap';
+import { Alert, Container } from 'react-bootstrap';
 
 export default class Heading extends Component {
     render() {

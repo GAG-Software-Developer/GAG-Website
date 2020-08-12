@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const postingSchema = mongoose.Schema({
     owner_id_posting_detail: { type: String, required: true },
     posting_detail: [{
-        part_of_detail: [{
+        part_of_detail: {
             image_detail: {
                 type: String,
                 required: true
@@ -15,7 +15,7 @@ const postingSchema = mongoose.Schema({
                 type: String,
                 required: true
             }
-        }]
+        }
     }]
 });
 //// export untuk model 
