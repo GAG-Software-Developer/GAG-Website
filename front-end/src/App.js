@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Navigasi from './views/components/essential/Navigasi.js';
 import Explore from './views/pages/Explore';
-import DetailProjek from './views/components/projek/DetailProjek';
+import Konten_Projek from './views/pages/Konten_Projek';
 
 
 function App() {
@@ -17,8 +17,8 @@ function App() {
       <Route exact path='/' component={ Explore } />
       
       <Switch>
-        <Route exact path='/Detail-Projek' component={ DetailProjek } />
-        <Route exact path='/Detail-Projek/{$id}' component={ DetailProjek } />
+        <Route exact path='/Detail-Projek' component={ Konten_Projek } />
+        <Route exact path='/Detail-Projek/{$id}' component={ Konten_Projek } />
       </Switch>
       
       </Router>
