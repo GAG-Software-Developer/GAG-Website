@@ -71,10 +71,10 @@ router.post('/posting-update', async (request, response) => {
             title_posting: request.body.title_posting,
             image_posting: request.body.image_posting,
             quote_posting: request.body.quote_posting,
-            //year_of_posting: request.body.year_of_posting,
+            year_of_posting: request.body.year_of_posting,
             owner_id_posting: request.body.owner_id_posting,
             owner_name_posting: request.body.owner_name_posting,
-            attribute: request.body.attribut
+            attribute: request.body.attribute
         }
     });
     response.send('Updated!');

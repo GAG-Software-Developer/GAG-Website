@@ -10,6 +10,7 @@ export default class Explore extends Component {
     render() {
         return (
             <div>
+                <Navigasi selectedPage="explore"/>
                 <Heading />
                 <Projek />
             </div>

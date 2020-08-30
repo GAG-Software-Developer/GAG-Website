@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function footer() {
+export default function Footer() {
     return (
         <div>
-              <footer class="py-5 bg-light mt-5">
-                <div class="container">
-                <p class="m-0 text-center">Copyright &copy; GAG 2020</p>
+              <footer className="py-5 bg-light mt-5">
+                <div className="container">
+                <p className="m-0 text-center">Copyright &copy; GAG 2020</p>
                 </div>
             </footer>
         </div>
