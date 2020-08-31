@@ -9,7 +9,16 @@ Database Schema
     1: {                                                            
         "name": "Giovanni Tjahjono",
         "email: "ivangiovn@gmail.com",
-        "password": "xxxxxxxxxxxx"
+        "password": "xxxxxxxxxxxx",
+        "description": "",
+        "skill_set": [],
+        "academic": [
+            {
+                "University_name":"",
+                "enrollment_year":"",
+                "course":""
+            }
+        ]
     }
     2: {
         "name": "Galih Samudro S.",

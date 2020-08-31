@@ -18,3 +18,4 @@ app.get('/test', (request, response) => {
 });
 //cara memanggil route
 app.use('/posting', require('./route/posting'));
+app.use('/user', require('./route/user'));
