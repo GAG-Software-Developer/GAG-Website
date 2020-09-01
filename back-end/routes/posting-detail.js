@@ -1,7 +1,7 @@
 const express = require('express');
 const { request, response, Router, json } = require('express');
 const router = express.Router();
-const posting_model = require('../model/posting-model');
+const posting_model = require('../models/posting-model');
 const posting_model_detail = require('../model/posting-detail-model');
 const { Model } = require('mongoose');
 const jwt = require('jsonwebtoken');

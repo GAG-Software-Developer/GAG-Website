@@ -17,5 +17,5 @@ app.get('/test', (request, response) => {
     response.send('okey');
 });
 //cara memanggil route
-app.use('/posting', require('./route/posting'));
-app.use('/user', require('./route/user'));
+app.use('/posting', require('./routes/posting'));
+app.use('/user', require('./routes/user'));

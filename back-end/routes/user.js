@@ -1,7 +1,7 @@
 const express = require('express');
 const { request, response, Router, json } = require('express');
 const router = express.Router();
-const user_model = require('../model/user-model');
+const user_model = require('../models/user-model');
 const { Model } = require('mongoose');
 const jwt = require('jsonwebtoken');
 const config = require('config');
