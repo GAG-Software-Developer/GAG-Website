@@ -16,6 +16,6 @@ app.get('/test', (request, response) => {
     console.log('heyy you are connected now!');
     response.send('okey');
 });
-//cara memanggil route
+//import route
 app.use('/posting', require('./routes/posting'));
 app.use('/user', require('./routes/user'));
