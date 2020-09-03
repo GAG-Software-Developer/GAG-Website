@@ -19,5 +19,5 @@ const postingSchema = mongoose.Schema({
     }]
 });
 //// export untuk model 
-module.exports = mongoose.model('posting', postingSchema);
+module.exports = mongoose.model('posting-detail', postingSchema);
 

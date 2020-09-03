@@ -18,4 +18,5 @@ app.get('/test', (request, response) => {
 });
 //import route
 app.use('/posting', require('./routes/posting'));
+app.use('/posting-detail', require('./routes/posting-detail'));
 app.use('/user', require('./routes/user'));
