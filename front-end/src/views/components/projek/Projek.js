@@ -27,10 +27,11 @@ export default class Projek extends Component {
             case 6: return "info"
             default: return "dark"
         }
-        
-      }
+
+    }
     render() {
         const { projects, isLoading } = this.state;
+        //=const projects= this.state.projects;
         if (isLoading) {
             return (
                 <Fragment>
@@ -74,7 +75,7 @@ export default class Projek extends Component {
                                     <a href="#!" className="btn">
                                         <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item">
                                             <div className="portfolio-item">
-                                                <img className="img-fluid" src={require('../../../assets/projek_images/'+ project.image_posting)} alt="" />
+                                                <img className="img-fluid" src={require('../../../assets/projek_images/' + project.image_posting)} alt="" />
                                             </div>
                                             <Card.Body>
                                                 <Card.Title>{project.title_posting}</Card.Title>
@@ -84,9 +85,9 @@ export default class Projek extends Component {
                                                     </small>
                                                 </footer>
                                                 <footer className="footer">
-                                                    <Badge pill variant={(project.owner_name_posting == "Galih Samudro") ? "info" : "warning" }>{project.owner_name_posting}</Badge>
+                                                    <Badge pill variant={(project.owner_name_posting == "Galih Samudro") ? "info" : "warning"}>{project.owner_name_posting}</Badge>
                                                 </footer>
-                                                
+
 
                                             </Card.Body>
                                         </Card>
