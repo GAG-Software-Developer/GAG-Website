@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Row, Container } from 'react-bootstrap'
 
-export default class Isi_Projek extends Component {
+export default class description_project extends Component {
     render() {
         return (
             <Fragment>

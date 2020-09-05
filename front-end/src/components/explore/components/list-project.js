@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react'
 import { Container, Card, Spinner, Badge } from 'react-bootstrap';
-import '../../styles/Navigasi.css';
-import '../../styles/stylish-portfolio.css'
+import '../../../styles/stylish-portfolio.css'
+import '../../../styles/navigasi.css';
 import axios from 'axios';
 
-export default class Projek extends Component {
+export default class list_project extends Component {
     constructor(props) {
         super(props);
         this.state = {

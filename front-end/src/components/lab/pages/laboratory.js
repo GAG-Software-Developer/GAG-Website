@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react'
-import Navigasi from '../components/essential/Navigasi'
+import Navigation from '../../essential/navigation'
 
-export default class Tutorial extends Component {
+export default class laboratory extends Component {
     render() {
         return (
             <Fragment>
-                <Navigasi selectedPage="tutorial"/>
+                <Navigation selectedPage="tutorial"/>
                 <h1>This is Tutorial</h1>
             </Fragment>
         )

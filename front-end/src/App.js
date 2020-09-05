@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Footer from './views/components/essential/footer';
-import Explore from './views/pages/Explore';
-import Konten_Projek from './views/pages/Konten_Projek';
-import About from './views/pages/About';
-import Tutorial from './views/pages/Tutorial';
-import Technology from './views/pages/Technology';
+import Footer from './components/essential/footer';
+import Explore from './components/explore/pages/explore';
+import Detail_Project from './components/explore/pages/detail-project';
+import About from './components/about/pages/about';
+import Contact from './components/contact/pages/contact';
+import Laboratory from './components/lab/pages/laboratory';
 
 
 function App() {
@@ -17,13 +17,13 @@ function App() {
         <Route exact path='/' component={Explore} />
 
         <Switch>
-          <Route exact path='/Detail-Projek' component={Konten_Projek} />
-          <Route exact path='/Detail-Projek/{$id}' component={Konten_Projek} />
+          <Route exact path='/Detail-Projek' component={Detail_Project} />
+          <Route exact path='/Detail-Projek/{$id}' component={Detail_Project} />
         </Switch>
 
         <Route exact path='/about' component={About} />
-        <Route exact path='/tutorial' component={Tutorial} />
-        <Route exact path='/technology' component={Technology} />
+        <Route exact path='/contact' component={Contact} />
+        <Route exact path='/laboratory' component={Laboratory} />
         <Footer />
       </Router>
     </div>

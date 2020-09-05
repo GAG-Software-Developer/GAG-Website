@@ -1,14 +1,13 @@
 import React, { Component, Fragment } from 'react';
-import Navigasi from '../components/essential/Navigasi';
-import About_page from '../components/about/About';
+import Navigasi from '../../essential/navigation';
 import { Container, Alert } from 'react-bootstrap';
+import Detail_About from '../components/detail-about'
 
-export default class About extends Component {
+export default class about extends Component {
     render() {
         return (
             <Fragment>
-
-<Navigasi selectedPage="about" />
+                <Navigasi selectedPage="about" />
                 <header>
                     <Container>
                         <Alert className="d-flex flex-column  mt-5 handwriting">
@@ -21,7 +20,7 @@ export default class About extends Component {
                         </Alert>
                     </Container>
                 </header>
-                <About_page />
+                <Detail_About />
             </Fragment>
         )
     }

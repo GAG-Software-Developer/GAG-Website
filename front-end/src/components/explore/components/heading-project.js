@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Row } from 'react-bootstrap';
 
-export default class Heading_Konten extends Component {
+export default class heading_project extends Component {
     render() {
         return (
             <header>
