@@ -31,14 +31,11 @@ exports.posting_detail_create = async (request, response) => {
     // 
     ////~~ INPUT NO TOKEN ~~
     //const array_posting = [request.body.attribute];
-    const posting_id = request.body.posting_id;
-    const read_posting = await posting_model.findOne({ _id: posting_id });
+    // const posting_id = request.body.posting_id;
+    // const read_posting = await posting_model.findOne({ _id: posting_id });
     const posting = await new posting_model_detail({
-        posting_id: read_posting,
-        posting_detail: {
-            image_detail: request.body.image_detail,
-            text_detail: request.body.text_detail
-        }
+        posting_id: request.body.posting_id,
+        posting_detail: request.body.posting_detail
     });
     posting.save();
     response.send(posting);
@@ -68,11 +65,8 @@ exports.posting_detail_update = async (request, response) => {
     //await posting_model.findByIdAndUpdate(id, { "owner_posting": "cah" });
     await posting_model.findByIdAndUpdate(user_id, {
         $set: {
-            posting_id: read_posting,
-            posting_detail: {
-                image_detail: request.body.image_detail,
-                text_detail: request.body.text_detail
-            }
+            posting_id: request.body.posting_id,
+            posting_detail: request.body.posting_detail
         }
     });
     response.send('Updated!');

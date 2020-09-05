@@ -6,15 +6,13 @@ const mongoose = require('mongoose');
 const postingSchema = mongoose.Schema({
     posting_id: { type: String, required: true },
     posting_detail: [{
-        part_of_detail: {
-            image_detail: {
-                type: String,
-                required: true
-            },
-            text_detail: {
-                type: String,
-                required: true
-            }
+        image_detail: {
+            type: String,
+            required: true
+        },
+        text_detail: {
+            type: String,
+            required: true
         }
     }]
 });
