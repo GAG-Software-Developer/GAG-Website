@@ -5,7 +5,7 @@ const router = express.Router();
 const PostingController = require('../controllers/posting-controller');
 //route
 router.post('/posting-create', PostingController.posting_create);
-router.get('/posting-read', PostingController.posting_get_all);
+router.get('/posting-read', PostingController.posting_read);
 router.post('/posting-update', PostingController.posting_update);
 router.post('/posting-delete', PostingController.posting_delete);
 module.exports = router;

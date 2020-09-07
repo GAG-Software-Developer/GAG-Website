@@ -17,7 +17,7 @@ function App() {
         <Route exact path='/' component={Explore} />
 
         <Switch>
-          <Route exact path='/Detail-Projek' component={Detail_Project} />
+          <Route exact path='/Detail-Projek/:id_project' component={Detail_Project} />
           <Route exact path='/Detail-Projek/{$id}' component={Detail_Project} />
         </Switch>
 

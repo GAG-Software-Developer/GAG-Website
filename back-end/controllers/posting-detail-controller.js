@@ -35,15 +35,18 @@ exports.posting_detail_create = async (request, response) => {
     // const read_posting = await posting_model.findOne({ _id: posting_id });
     const posting = await new posting_model_detail({
         posting_id: request.body.posting_id,
+        overview: request.body.overview,
         posting_detail: request.body.posting_detail
     });
     posting.save();
     response.send(posting);
 };
 exports.posting_detail_read = async (request, response) => {
-    const read_posting = await posting_model.find({});
+    const id_posting = request.query.id_posting;
+    const read_posting_detail = await posting_model_detail.find({ posting_id: id_posting });
     //console.log(read_posting);
-    response.send(read_posting);
+
+    response.send(read_posting_detail);
 
     ////GENERATE jwtoken
     // const payload = {
