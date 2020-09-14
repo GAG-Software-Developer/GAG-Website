@@ -26,7 +26,7 @@ exports.posting_create = async (request, response) => {
     // 
     ////~~ INPUT NO TOKEN ~~
     //const array_posting = [request.body.attribute];
-    
+
     const posting = await new posting_model({
         title_posting: request.body.title_posting,
         image_posting: request.body.image_posting,
@@ -44,9 +44,10 @@ exports.posting_read = async (request, response) => {
     //id_owner Galih = 5f4ca3ff5f92f5babcd55c65
 
     //Get owner if from get parameter
-    const id_owner = request.query.id;
+    //const id_owner = request.query.id;
     //Find project based on the owner id
-    const read_posting = await posting_model.find({owner_id_posting: id_owner})
+    //const read_posting = await posting_model.find({owner_id_posting: id_owner})
+    const read_posting = await posting_model.find()
     //Send the result back
     response.send(read_posting);
 

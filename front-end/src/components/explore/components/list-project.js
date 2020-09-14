@@ -32,6 +32,7 @@ export default class list_project extends Component {
     }
     render() {
         const { projects, isLoading } = this.state;
+        //console.log(projects);
         if (isLoading) {
             return (
                 <Fragment>
@@ -60,7 +61,7 @@ export default class list_project extends Component {
                                                     </small>
                                                 </footer>
                                                 <footer className="footer">
-                                                    <Badge pill variant={(project.owner_name_posting == "Galih Samudro") ? "info" : "warning"}>{project.owner_name_posting}</Badge>
+                                                    <Badge pill variant={(project.owner_name_posting === "Galih Samudro") ? "info" : "warning"}>{project.owner_name_posting}</Badge>
                                                 </footer>
                                             </Card.Body>
                                         </Card>
