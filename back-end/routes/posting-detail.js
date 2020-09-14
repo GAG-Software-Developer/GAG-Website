@@ -6,6 +6,6 @@ const PostingDetailController = require('../controllers/posting-detail-controlle
 //route
 router.post('/posting-detail-create', PostingDetailController.posting_detail_create);
 router.get('/posting-detail-read', PostingDetailController.posting_detail_read);
-router.post('/posting-detail-update', PostingDetailController.posting_detail_update);
-router.post('/posting-detail-delete', PostingDetailController.posting_detail_delete);
+router.put('/posting-detail-update', PostingDetailController.posting_detail_update);
+router.delete('/posting-detail-delete', PostingDetailController.posting_detail_delete);
 module.exports = router;
