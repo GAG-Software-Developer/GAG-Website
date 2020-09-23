@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Container, Spinner, Row } from 'react-bootstrap';
-import axios from 'axios'
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default class description_project extends Component {
     constructor(props) {
@@ -11,6 +12,7 @@ export default class description_project extends Component {
             isLoading: true
         }
     }
+    //(<a href={link} target="_blank"><p className="text-left" >Download {project_title} Document</p></a>)
     componentDidMount() {
         //Fetch data from backend server
         axios.get('http://localhost:8000/posting-detail/posting-detail-read?id_posting=' + this.props.id_project)
@@ -24,6 +26,7 @@ export default class description_project extends Component {
         var description = [];
         var project_title = detail_project.title_posting;
         var attribute = detail_project.attribute;
+        var link = detail_project.link_posting;
 
         //Assign values above
         for (const index in description_project) {
@@ -67,7 +70,8 @@ export default class description_project extends Component {
                                             }
                                         </ul>
                                         <h4 className="text-left font-weight-bold">Source</h4>
-                                        <p className="text-left">https://github.com/giovannitjahjono</p>
+                                        {(link != null) ? (<a href={link} target="_blank"><p className="text-left" >Download {project_title} Document</p></a>) : (<p className="text-left">No additional source is available</p>)}
+
                                     </div>
                                 </Row>
                             </header>
