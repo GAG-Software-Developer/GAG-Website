@@ -61,7 +61,7 @@ export default class list_project extends Component {
                                                     </small>
                                                 </footer>
                                                 <footer className="footer">
-                                                    <Badge pill variant={(project.type_posting === "UX Research") ? "info" : (project.type_posting === "Mobile Application") ? "success" : "warning"}>{project.type_posting}</Badge>
+                                                    <Badge pill variant={(project.type_posting === "UX Research") ? "info" : (project.type_posting === "Mobile Application") ? "success" : (project.type_posting === "Fullstack") ? "danger" : "warning"}>{project.type_posting}</Badge>
                                                 </footer>
                                             </Card.Body>
                                         </Card>

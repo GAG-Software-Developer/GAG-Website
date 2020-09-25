@@ -14,7 +14,7 @@ export default class explore extends Component {
                 <header>
                     <Container>
                         <Alert className="d-flex flex-column  mt-5 handwriting">
-                            <Alert.Heading className="monospace"><h1>Hi, nice to see you</h1></Alert.Heading>
+                            <Alert.Heading className="monospace"><h1>Hi, Hendro Tjahjono</h1></Alert.Heading>
                             <p className="monospace">Welcome to our gallery of our work.</p>
                             <hr />
                             <p className="mb-0">
