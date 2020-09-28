@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBaby, faCoffee, faComments, faCompass, faDatabase, faEnvelope, faFlask, faLock, faSmile, faTools, faUsers, faVial } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import config from '../../../config.json';
+const id_user = config['id_user'];
 library.add(fab, faCoffee);
 
 export default class About extends Component {
@@ -17,18 +19,20 @@ export default class About extends Component {
             photo: "",
             educations: [],
             skills: [],
+            work_experiences: [],
             isLoading: true
         }
     }
     componentDidMount() {
-        axios.get('http://localhost:8000/user/user-read?id=5f4c9eb7c715f9b7f943fe92')
+        axios.get('http://localhost:8000/user/user-read?id=' + id_user)
             .then(response => this.setState({
                 fullname: response.data['fullname_user'],
                 description: response.data['description_user'],
                 isLoading: false,
                 photo: response.data['photo_user'],
                 educations: response.data['academic_user'],
-                skills: response.data['skill_set_user']
+                skills: response.data['skill_set_user'],
+                work_experiences: response.data['experience_user']
             }));
     }
     getRandomBadgeColor() {
@@ -52,7 +56,7 @@ export default class About extends Component {
                 return "angular"
                 break;
             case "nodejs":
-                return "node-js"
+                return "node"
                 break;
             case "expressjs":
                 return "js"
@@ -114,7 +118,7 @@ export default class About extends Component {
         }
     }
     render() {
-        const { fullname, photo, educations, skills, description, isLoading } = this.state;
+        const { fullname, photo, educations, skills, description, work_experiences, isLoading } = this.state;
 
         if (isLoading) {
             return (
@@ -132,10 +136,8 @@ export default class About extends Component {
 
                             <Fragment>
                                 <Row className="align-items-center mb-5">
-                                    <div className="col-lg-6">
-
+                                    <div className="col-lg-6 mb-3">
                                         <img className="img-fluid  shadow-lg" src={require('../../../assets/user_images/' + photo)} alt="photo of Giovanni"></img>
-
                                     </div>
                                     <div className="col-lg-6">
                                         <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>{fullname}</h4>
@@ -143,7 +145,7 @@ export default class About extends Component {
                                     </div>
                                 </Row>
                                 <Row>
-                                    <div className="col-lg-6">
+                                    <div className="col-lg-6  mb-5">
                                         <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>Education</h4>
                                         <table className="w-100">
                                             {
@@ -151,7 +153,7 @@ export default class About extends Component {
 
                                                     <tr className="text-left align-top" key={key}>
                                                         <td className="w-25"><b style={{ color: "lightcoral" }}>{education.enrollment_year}</b></td>
-                                                        <td><b>{education.university_name}</b> - <i>{education.course}</i></td>
+                                                        <td><b>{education.university_name}</b><br></br> <i>{education.course}</i></td>
                                                     </tr>
                                                 )
                                             }
@@ -168,7 +170,23 @@ export default class About extends Component {
 
                                     </div>
                                 </Row>
+                                <Row>
+                                    <div className="col-lg-12  mb-5">
+                                        <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>Work Experiences</h4>
+                                        <table>
+                                            {
+                                                work_experiences.map((work, key) =>
 
+                                                    <tr className="text-left align-top" key={key}>
+                                                        <td style={{ width: 200 }}><b style={{ color: "lightcoral" }}>{work.year_of_work}</b></td>
+                                                        <td ><b>{work.company_name}</b> <br></br> <i>{work.role}</i></td>
+                                                    </tr>
+                                                )
+                                            }
+                                        </table>
+                                    </div>
+
+                                </Row>
                             </Fragment>
 
                         </div>

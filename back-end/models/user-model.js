@@ -9,6 +9,8 @@ const userSchema = mongoose.Schema({
     password_user: { type: String, required: true },
     photo_user: { type: String, required: true },
     github_user: { type: String, required: true },
+    phone_user: { type: String, required: true },
+    whatsapp_user: { type: String, required: true },
     description_user: { type: String, required: true },
     skill_set_user: { type: [String], required: true },
     academic_user: {

@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import '../../../styles/stylish-portfolio.css'
 import '../../../styles/navigasi.css';
 import axios from 'axios';
+import config from '../../../config.json';
+const id_user = config['id_user'];
 
 export default class list_project extends Component {
     constructor(props) {
@@ -14,7 +16,7 @@ export default class list_project extends Component {
         }
     }
     componentDidMount() {
-        axios.get('http://localhost:8000/posting/posting-read?id=5f4c9eb7c715f9b7f943fe92')
+        axios.get('http://localhost:8000/posting/posting-read?id=' + id_user)
             .then(response => this.setState({ projects: response.data, isLoading: false }));
     }
     getRandomBadgeColor() {

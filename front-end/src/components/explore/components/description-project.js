@@ -25,6 +25,92 @@ export default class description_project extends Component {
             .then(response => this.setState({ description_project: response.data['posting_description'], detail_project: response.data['posting_detail'], isLoading: false }))
             .catch(error => console.log(error));
     }
+    getLogoSkill(name) {
+        switch (name.toLowerCase()) {
+            case "react":
+                return "react"
+                break;
+            case "angular":
+                return "angular"
+                break;
+            case "nodejs":
+                return "node"
+                break;
+            case "expressjs":
+                return "js"
+                break;
+            case "javascript":
+                return "js"
+                break;
+            case "codeigniter":
+                return "php"
+                break;
+            case "laravel":
+                return "laravel"
+                break;
+            case "php":
+                return "php"
+                break;
+
+            case "amazon cognito":
+                return "aws"
+                break;
+            case "aws":
+                return "aws"
+                break;
+            case "google firebase":
+                return "google"
+                break;
+            case "mysql":
+                return "buffer"
+                break;
+            case "mongodb":
+                return "buffer"
+                break;
+            case "github":
+                return "github"
+                break;
+            case "user testing":
+                return "wpforms"
+                break;
+            case "swift":
+                return "swift"
+                break;
+            case "user testing":
+                return "angular"
+                break;
+            case "github":
+                return "github"
+                break;
+            case "user research":
+                return "elementor"
+                break;
+            case "design process":
+                return "product-hunt"
+                break;
+            case "physical prototyping":
+                return "simplybuilt"
+                break;
+            case "firebase":
+                return "google"
+                break;
+            case "java":
+                return "java"
+                break;
+            case "aes256":
+                return "expeditedssl"
+                break;
+            case "rsa2048":
+                return "expeditedssl"
+                break;
+            case "adobe xd":
+                return "adobe"
+                break;
+            default:
+                return "elementor"
+                break;
+        }
+    }
     render() {
         const { description_project, detail_project, isLoading } = this.state;
         //Declare values
@@ -73,90 +159,12 @@ export default class description_project extends Component {
 
                                             {
                                                 attribute.map((element, key) =>
-                                                    (element == "React") ?
-                                                        <tr key={key}>
-                                                            <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'react']} /></td>
-                                                            <td style={{ textAlign: "left" }}>{element}</td>
-                                                        </tr> :
-                                                        (element == "Angular") ?
-                                                            <tr key={key}>
-                                                                <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'angular']} /></td>
-                                                                <td style={{ textAlign: "left" }}>{element}</td>
-                                                            </tr> :
-                                                            (element == "php") ?
-                                                                <tr key={key}>
-                                                                    <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'php']} /></td>
-                                                                    <td style={{ textAlign: "left" }}>{element}</td>
-                                                                </tr> :
-                                                                (element == "ExpressJS") ?
-                                                                    <tr key={key}>
-                                                                        <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'js']} /></td>
-                                                                        <td style={{ textAlign: "left" }}>{element}</td>
-                                                                    </tr> :
-                                                                    (element == "NodeJS") ?
-                                                                        <tr key={key}>
-                                                                            <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'node']} /></td>
-                                                                            <td style={{ textAlign: "left" }}>{element}</td>
-                                                                        </tr> :
-                                                                        (element == "AWS") ?
-                                                                            <tr key={key}>
-                                                                                <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'aws']} /></td>
-                                                                                <td style={{ textAlign: "left" }}>{element}</td>
-                                                                            </tr> :
-                                                                            (element == "Firebase") ?
-                                                                                <tr key={key}>
-                                                                                    <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'google']} /></td>
-                                                                                    <td style={{ textAlign: "left" }}>{element}</td>
-                                                                                </tr> :
-                                                                                (element == "CodeIgniter") ?
-                                                                                    <tr key={key}>
-                                                                                        <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'google']} /></td>
-                                                                                        <td style={{ textAlign: "left" }}>{element}</td>
-                                                                                    </tr> :
-                                                                                    (element == "Adobe xD") ?
-                                                                                        <tr key={key}>
-                                                                                            <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'adobe']} /></td>
-                                                                                            <td style={{ textAlign: "left" }}>{element}</td>
-                                                                                        </tr> :
-                                                                                        (element == "Laravel") ?
-                                                                                            <tr key={key}>
-                                                                                                <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'laravel']} /></td>
-                                                                                                <td style={{ textAlign: "left" }}>{element}</td>
-                                                                                            </tr> :
-                                                                                            (element == "MongoDB" || element == "MySQL") ?
-                                                                                                <tr key={key}>
-                                                                                                    <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={faDatabase} /></td>
-                                                                                                    <td style={{ textAlign: "left" }}>{element}</td>
-                                                                                                </tr> :
-                                                                                                (element == "Java") ?
-                                                                                                    <tr key={key}>
-                                                                                                        <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'java']} /></td>
-                                                                                                        <td style={{ textAlign: "left" }}>{element}</td>
-                                                                                                    </tr> :
-                                                                                                    (element == "AES256" || element == "RSA2048") ?
-                                                                                                        <tr key={key}>
-                                                                                                            <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={faLock} /></td>
-                                                                                                            <td style={{ textAlign: "left" }}>{element}</td>
-                                                                                                        </tr> :
-                                                                                                        (element == "Testing & Evaluation") ?
-                                                                                                            <tr key={key}>
-                                                                                                                <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={faVial} /></td>
-                                                                                                                <td style={{ textAlign: "left" }}>{element}</td>
-                                                                                                            </tr> :
-                                                                                                            (element == "User Research") ?
-                                                                                                                <tr key={key}>
-                                                                                                                    <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={faUsers} /></td>
-                                                                                                                    <td style={{ textAlign: "left" }}>{element}</td>
-                                                                                                                </tr> :
-                                                                                                                (element == "Interview") ?
-                                                                                                                    <tr key={key}>
-                                                                                                                        <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={faComments} /></td>
-                                                                                                                        <td style={{ textAlign: "left" }}>{element}</td>
-                                                                                                                    </tr> :
-                                                                                                                    <tr key={key}>
-                                                                                                                        <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={faTools} /></td>
-                                                                                                                        <td style={{ textAlign: "left" }}>{element}</td>
-                                                                                                                    </tr>
+
+                                                    <tr key={key}>
+                                                        <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', this.getLogoSkill(element)]} /></td>
+                                                        <td style={{ textAlign: "left" }}>{element}</td>
+                                                    </tr>
+
                                                 )
                                             }
                                         </table>
