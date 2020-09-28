@@ -18,8 +18,21 @@
 @import url(https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap);
 @charset "UTF-8";
 
+@font-face {
+  font-family: "ITC";
+  src: local("ITC"),
+    url(../assets/fonts/itc-cheltenham/CheltenhamStdBook.otf) format("woff");
+}
+@font-face {
+  font-family: "ITC Bold";
+  src: local("ITC Bold"),
+    url(../assets/fonts/itc-cheltenham/CheltenhamStdBold.otf) format("woff");
+}
 .handwriting {
-  font-family: "Roboto", sans-serif;
+  font-family: "ITC";
+}
+.itc-bold {
+  font-family: "ITC Bold";
 }
 .monospace {
   font-family: "IBM Plex Mono", monospace;
@@ -49,4 +62,15 @@
 }
 .body {
   background-color: black;
+}
+.bg {
+  background-color: lightcoral;
+}
+.bg1 {
+  background-image: url("../assets/projek_images/background.png");
+  background-position: center;
+  background-size: contain;
+}
+.blurEffect {
+  filter: blur(5px);
 }

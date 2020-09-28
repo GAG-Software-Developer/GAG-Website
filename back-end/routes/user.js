@@ -24,7 +24,8 @@ router.post('/user-create', (request, response) => {
     response.send(user);
 });
 router.get('/user-read', async (request, response) => {
-    const read_user = await user_model.find({});
+    const id_owner = request.query.id;
+    const read_user = await user_model.findOne({ _id: id_owner });
     response.send(read_user);
 });
 router.post('/posting-update', async (request, response) => {

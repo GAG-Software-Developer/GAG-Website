@@ -2,7 +2,12 @@ import React, { Component, Fragment } from 'react'
 import { Container, Spinner, Row } from 'react-bootstrap';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBaby, faCoffee, faComments, faCompass, faDatabase, faEnvelope, faFlask, faLock, faSmile, faTools, faUsers, faVial } from '@fortawesome/free-solid-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import '../../../styles/navigasi.css';
+library.add(fab, faCoffee);
 export default class description_project extends Component {
     constructor(props) {
         super(props);
@@ -12,6 +17,7 @@ export default class description_project extends Component {
             isLoading: true
         }
     }
+
     //(<a href={link} target="_blank"><p className="text-left" >Download {project_title} Document</p></a>)
     componentDidMount() {
         //Fetch data from backend server
@@ -55,22 +61,107 @@ export default class description_project extends Component {
                             <header>
                                 <Row>
                                     <div className="col-lg-8">
-                                        <h1 className="text-left font-weight-bold">{project_title}</h1>
+                                        <h1 className="text-left font-weight-bold" style={{ color: "lightcoral" }}>{project_title}</h1>
                                         <p className="text-left">{overview}</p>
 
                                     </div>
                                     <div className="col-lg-1"></div>
                                     <div className="col-lg-3">
-                                        <h4 className="text-left font-weight-bold">Tools</h4>
-                                        <ul className="text-left">
+                                        <h4 className="text-left font-weight-bold" style={{ color: "lightcoral" }}>Tools</h4>
+                                        <table>
+
+
                                             {
                                                 attribute.map((element, key) =>
-                                                    <li key={key}>{element}</li>
+                                                    (element == "React") ?
+                                                        <tr key={key}>
+                                                            <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'react']} /></td>
+                                                            <td style={{ textAlign: "left" }}>{element}</td>
+                                                        </tr> :
+                                                        (element == "Angular") ?
+                                                            <tr key={key}>
+                                                                <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'angular']} /></td>
+                                                                <td style={{ textAlign: "left" }}>{element}</td>
+                                                            </tr> :
+                                                            (element == "php") ?
+                                                                <tr key={key}>
+                                                                    <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'php']} /></td>
+                                                                    <td style={{ textAlign: "left" }}>{element}</td>
+                                                                </tr> :
+                                                                (element == "ExpressJS") ?
+                                                                    <tr key={key}>
+                                                                        <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'js']} /></td>
+                                                                        <td style={{ textAlign: "left" }}>{element}</td>
+                                                                    </tr> :
+                                                                    (element == "NodeJS") ?
+                                                                        <tr key={key}>
+                                                                            <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'node']} /></td>
+                                                                            <td style={{ textAlign: "left" }}>{element}</td>
+                                                                        </tr> :
+                                                                        (element == "AWS") ?
+                                                                            <tr key={key}>
+                                                                                <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'aws']} /></td>
+                                                                                <td style={{ textAlign: "left" }}>{element}</td>
+                                                                            </tr> :
+                                                                            (element == "Firebase") ?
+                                                                                <tr key={key}>
+                                                                                    <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'google']} /></td>
+                                                                                    <td style={{ textAlign: "left" }}>{element}</td>
+                                                                                </tr> :
+                                                                                (element == "CodeIgniter") ?
+                                                                                    <tr key={key}>
+                                                                                        <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'google']} /></td>
+                                                                                        <td style={{ textAlign: "left" }}>{element}</td>
+                                                                                    </tr> :
+                                                                                    (element == "Adobe xD") ?
+                                                                                        <tr key={key}>
+                                                                                            <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'adobe']} /></td>
+                                                                                            <td style={{ textAlign: "left" }}>{element}</td>
+                                                                                        </tr> :
+                                                                                        (element == "Laravel") ?
+                                                                                            <tr key={key}>
+                                                                                                <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'laravel']} /></td>
+                                                                                                <td style={{ textAlign: "left" }}>{element}</td>
+                                                                                            </tr> :
+                                                                                            (element == "MongoDB" || element == "MySQL") ?
+                                                                                                <tr key={key}>
+                                                                                                    <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={faDatabase} /></td>
+                                                                                                    <td style={{ textAlign: "left" }}>{element}</td>
+                                                                                                </tr> :
+                                                                                                (element == "Java") ?
+                                                                                                    <tr key={key}>
+                                                                                                        <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', 'java']} /></td>
+                                                                                                        <td style={{ textAlign: "left" }}>{element}</td>
+                                                                                                    </tr> :
+                                                                                                    (element == "AES256" || element == "RSA2048") ?
+                                                                                                        <tr key={key}>
+                                                                                                            <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={faLock} /></td>
+                                                                                                            <td style={{ textAlign: "left" }}>{element}</td>
+                                                                                                        </tr> :
+                                                                                                        (element == "Testing & Evaluation") ?
+                                                                                                            <tr key={key}>
+                                                                                                                <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={faVial} /></td>
+                                                                                                                <td style={{ textAlign: "left" }}>{element}</td>
+                                                                                                            </tr> :
+                                                                                                            (element == "User Research") ?
+                                                                                                                <tr key={key}>
+                                                                                                                    <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={faUsers} /></td>
+                                                                                                                    <td style={{ textAlign: "left" }}>{element}</td>
+                                                                                                                </tr> :
+                                                                                                                (element == "Interview") ?
+                                                                                                                    <tr key={key}>
+                                                                                                                        <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={faComments} /></td>
+                                                                                                                        <td style={{ textAlign: "left" }}>{element}</td>
+                                                                                                                    </tr> :
+                                                                                                                    <tr key={key}>
+                                                                                                                        <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={faTools} /></td>
+                                                                                                                        <td style={{ textAlign: "left" }}>{element}</td>
+                                                                                                                    </tr>
                                                 )
                                             }
-                                        </ul>
-                                        <h4 className="text-left font-weight-bold">Source</h4>
-                                        {(link != null) ? (<a href={link} target="_blank"><p className="text-left" >Download {project_title} Document</p></a>) : (<p className="text-left">No additional source is available</p>)}
+                                        </table>
+                                        <h4 className="text-left font-weight-bold mt-2" style={{ color: "lightcoral" }}>Source</h4>
+                                        {(link != null) ? (<a href={link} target="_blank"><p className="float-left btn btn-info" >See Document</p></a>) : (<p className="text-left">No additional source is available</p>)}
 
                                     </div>
                                 </Row>
@@ -85,7 +176,7 @@ export default class description_project extends Component {
                                                     <img className="img-fluid  shadow-lg" src={require('../../../assets/projek_images/' + element.image_detail)} alt="image1"></img>
                                                 </div>
                                                 <div className="col-lg-5">
-                                                    <h4 className="text-left font-weight-bold">{element.title_detail}</h4>
+                                                    <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>{element.title_detail}</h4>
                                                     <p className="text-left">{element.text_detail}</p>
                                                 </div>
                                             </Row>
@@ -93,7 +184,7 @@ export default class description_project extends Component {
                                             //If odd, shows the data in the right
                                             <Row className="align-items-center mb-3" key={element._id}>
                                                 <div className="col-lg-5">
-                                                    <h4 className="text-left font-weight-bold">{element.title_detail}</h4>
+                                                    <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>{element.title_detail}</h4>
                                                     <p className="text-left">{element.text_detail}</p>
                                                 </div>
                                                 <div className="col-lg-7">

@@ -5,7 +5,7 @@ export default class laboratory extends Component {
     render() {
         return (
             <Fragment>
-                <Navigation selectedPage="tutorial"/>
+                <Navigation selectedPage="laboratory" />
                 <h1>This is Tutorial</h1>
             </Fragment>
         )
