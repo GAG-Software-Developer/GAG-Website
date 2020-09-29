@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import Navigation from '../../essential/navigation';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { Container, Card, Spinner, Badge } from 'react-bootstrap';
+import { Container, Card, Spinner, Badge, Button } from 'react-bootstrap';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -34,68 +34,74 @@ export default class contact extends Component {
                 isLoading: false
             }));
     }
+
     render() {
         const { email, phone_number, whatsapp_number, github, linkedin } = this.state;
         return (
             <Fragment>
                 <Navigation selectedPage="contact" />
                 <Container>
-                    <div className="row no-gutters">
+                    <div className="row no-gutter">
 
                         <div className="col-lg-4">
-                            <a className="btn" href={linkedin} target="_blank">
-                                <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item" style={{ width: '20rem' }}>
-                                    <Card.Body>
-                                        <Card.Title><h1><FontAwesomeIcon icon={['fas', 'envelope']} /></h1></Card.Title>
-                                        <Card.Subtitle className="mb-2 text-muted">Email</Card.Subtitle>
-                                        <Card.Text> {email} </Card.Text>
-                                    </Card.Body>
-                                </Card>
-                            </a>
+                            <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item w-100">
+                                <Card.Body>
+                                    <Card.Title><h1><FontAwesomeIcon icon={['fas', 'envelope']} /></h1></Card.Title>
+                                    <Card.Subtitle className="mb-2 text-muted">Email</Card.Subtitle>
+                                    <Card.Text> {email} </Card.Text>
+                                </Card.Body>
+                            </Card>
                         </div>
                         <div className="col-lg-4">
-                            <a className="btn" href={"https://wa.me/" + whatsapp_number} target="_blank">
-                                <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item" style={{ width: '20rem' }}>
+                            <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item w-100">
+                                <a href={"https://wa.me/" + whatsapp_number} target="_blank" style={{ textDecoration: "none", color: "black" }}>
+
                                     <Card.Body>
                                         <Card.Title><h1><FontAwesomeIcon icon={['fab', 'whatsapp']} /></h1></Card.Title>
                                         <Card.Subtitle className="mb-2 text-muted">WhatsApp</Card.Subtitle>
-                                        <Card.Text> {whatsapp_number} </Card.Text>
+                                        <Card.Text> <b>(+61)</b>426807941 </Card.Text>
                                     </Card.Body>
-                                </Card>
-                            </a>
+                                </a>
+                            </Card>
+
                         </div>
                         <div className="col-lg-4">
-                            <a className="btn" href={phone_number} target="_blank">
-                                <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item" style={{ width: '20rem' }}>
-                                    <Card.Body>
-                                        <Card.Title><h1><FontAwesomeIcon icon={['fas', 'phone']} /></h1></Card.Title>
-                                        <Card.Subtitle className="mb-2 text-muted">Phone</Card.Subtitle>
-                                        <Card.Text> {phone_number} </Card.Text>
-                                    </Card.Body>
-                                </Card>
-                            </a>
+
+                            <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item w-100">
+
+                                <Card.Body>
+                                    <Card.Title><h1><FontAwesomeIcon icon={['fas', 'phone']} /></h1></Card.Title>
+                                    <Card.Subtitle className="mb-2 text-muted">Phone</Card.Subtitle>
+                                    <Card.Text> <b>(+62)</b>81231466200 </Card.Text>
+                                </Card.Body>
+                            </Card>
+
                         </div>
                         <div className="col-lg-4">
-                            <a className="btn" href={github} target="_blank">
-                                <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item" style={{ width: '20rem' }}>
+
+                            <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item w-100">
+                                <a href={github} target="_blank" style={{ textDecoration: "none", color: "black" }}>
                                     <Card.Body>
                                         <Card.Title><h1><FontAwesomeIcon icon={['fab', 'github']} /></h1></Card.Title>
                                         <Card.Subtitle className="mb-2 text-muted">GitHub</Card.Subtitle>
-                                        <Card.Text> {github} </Card.Text>
+                                        <Card.Text> giovannitjahjono </Card.Text>
                                     </Card.Body>
-                                </Card>
-                            </a>
+                                </a>
+                            </Card>
+
                         </div>
                         <div className="col-lg-4">
-                            <a className="btn" href={linkedin} target="_blank">
-                                <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item" style={{ width: '20rem' }}>
+
+                            <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item w-100">
+                                <a href={linkedin} target="_blank" style={{ textDecoration: "none", color: "black" }}>
                                     <Card.Body>
                                         <Card.Title><h1><FontAwesomeIcon icon={['fab', 'linkedin']} /></h1></Card.Title>
-                                        <Card.Subtitle className="mb-2 text-muted">GitHub</Card.Subtitle>
-                                        <Card.Text> {linkedin} </Card.Text>
+                                        <Card.Subtitle className="mb-2 text-muted">LinkedIn</Card.Subtitle>
+                                        <Card.Text> giovannitjahjono </Card.Text>
                                     </Card.Body>
-                                </Card>
-                            </a>
+                                </a>
+                            </Card>
+
                         </div>
                     </div>
                 </Container>
