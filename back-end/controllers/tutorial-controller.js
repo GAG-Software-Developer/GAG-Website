@@ -23,10 +23,8 @@ exports.tutorial_read = async (request, response) => {
     //id_owner Ivan = 5f4c9eb7c715f9b7f943fe92
     //id_owner Galih = 5f4ca3ff5f92f5babcd55c65
 
-    //Get owner if from get parameter
-    const id_writer = request.query.id;
     //Find project based on the owner id
-    const read_tutorial = await tutorial_model.find({ writer_id_tutorial: id_writer })
+    const read_tutorial = await tutorial_model.find();
     //const read_posting = await posting_model.find()
     //Send the result back
     response.send(read_tutorial);
