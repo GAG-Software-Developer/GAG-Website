@@ -7,6 +7,8 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import config from '../../../config.json';
 const id_user = config['id_user'];
+
+const url_server = config['url_server'];
 library.add(fab, faCoffee);
 
 export default class About extends Component {
@@ -24,7 +26,7 @@ export default class About extends Component {
         }
     }
     componentDidMount() {
-        axios.get('http://localhost:8000/user/user-read?id=' + id_user)
+        axios.get(url_server + 'user/user-read?id=' + id_user)
             .then(response => this.setState({
                 fullname: response.data['fullname_user'],
                 description: response.data['description_user'],

@@ -6,6 +6,7 @@ import '../../../styles/navigasi.css';
 import axios from 'axios';
 import config from '../../../config.json';
 const id_user = config['id_user'];
+const url_server = config['url_server'];
 
 export default class list_project extends Component {
     constructor(props) {
@@ -16,7 +17,7 @@ export default class list_project extends Component {
         }
     }
     componentDidMount() {
-        axios.get('http://localhost:8000/posting/posting-read?id=' + id_user)
+        axios.get(url_server + 'posting/posting-read?id=' + id_user)
             .then(response => this.setState({ projects: response.data, isLoading: false }));
     }
     getRandomBadgeColor() {

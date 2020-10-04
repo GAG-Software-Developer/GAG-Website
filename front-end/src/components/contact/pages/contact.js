@@ -9,6 +9,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import config from '../../../config.json';
 const id_user = config['id_user'];
+const url_server = config['url_server'];
 library.add(fab, fas);
 
 export default class contact extends Component {
@@ -24,7 +25,7 @@ export default class contact extends Component {
         }
     }
     componentDidMount() {
-        axios.get('http://localhost:8000/user/user-read?id=' + id_user)
+        axios.get(url_server + 'user/user-read?id=' + id_user)
             .then(response => this.setState({
                 linkedin: response.data['linkedin_user'],
                 email: response.data['email_user'],

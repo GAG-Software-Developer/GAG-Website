@@ -7,7 +7,10 @@ import { faBaby, faCoffee, faComments, faCompass, faDatabase, faEnvelope, faFlas
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import '../../../styles/navigasi.css';
+import config from '../../../config.json';
 library.add(fab, faCoffee);
+const url_server = config['url_server'];
+
 export default class description_project extends Component {
     constructor(props) {
         super(props);
@@ -21,7 +24,7 @@ export default class description_project extends Component {
     //(<a href={link} target="_blank"><p className="text-left" >Download {project_title} Document</p></a>)
     componentDidMount() {
         //Fetch data from backend server
-        axios.get('http://localhost:8000/posting-detail/posting-detail-read?id_posting=' + this.props.id_project)
+        axios.get(url_server + 'posting-detail/posting-detail-read?id_posting=' + this.props.id_project)
             .then(response => this.setState({ description_project: response.data['posting_description'], detail_project: response.data['posting_detail'], isLoading: false }))
             .catch(error => console.log(error));
     }

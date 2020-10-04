@@ -6,6 +6,10 @@ import '../../../styles/stylish-portfolio.css'
 import '../../../styles/navigasi.css';
 import axios from 'axios';
 
+import config from '../../../config.json';
+const id_user = config['id_user'];
+const url_server = config['url_server'];
+
 export default class list_tutorial extends Component {
 
     constructor(props) {
@@ -16,7 +20,7 @@ export default class list_tutorial extends Component {
         }
     }
     componentDidMount() {
-        axios.get('http://localhost:8000/api/tutorial')
+        axios.get(url_server + 'api/tutorial')
             .then(response => this.setState({ tutorials: response.data, isLoading: false }));
     }
     getRandomBadgeColor() {
@@ -50,7 +54,7 @@ export default class list_tutorial extends Component {
                         <div className="row no-gutters">
                             {tutorials.map((tutorial) =>
                                 <div className="col-lg-4" key={tutorial._id}>
-                                    <Link className="btn" to={'/Detail-Projek/' + tutorial._id}>
+                                    <Link className="btn" to={'/Detail-Tutorial/' + tutorial._id}>
                                         <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item">
                                             <div className="portfolio-item">
                                                 <img className="img-fluid" src={require('../../../assets/tutorial_images/1.jpg')} alt="" />
