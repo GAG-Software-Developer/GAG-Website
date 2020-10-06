@@ -57,15 +57,10 @@ export default class list_tutorial extends Component {
                                     <Link className="btn" to={'/Detail-Tutorial/' + tutorial._id}>
                                         <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item">
                                             <div className="portfolio-item">
-                                                <img className="img-fluid" src={require('../../../assets/tutorial_images/1.jpg')} alt="" />
+                                                <img className="img-fluid" src={require('../../../assets/tutorial_images/' + tutorial.image_tutorial)} alt="" />
                                             </div>
                                             <Card.Body>
                                                 <Card.Title>{tutorial.title_tutorial}</Card.Title>
-                                                <footer className="blockquote-footer">
-                                                    <small className="text-muted">
-                                                        <cite title="Source Title">TEST</cite>
-                                                    </small>
-                                                </footer>
 
                                             </Card.Body>
                                         </Card>

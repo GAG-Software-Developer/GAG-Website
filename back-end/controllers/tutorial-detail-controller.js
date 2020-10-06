@@ -17,7 +17,7 @@ exports.tutorial_detail_create = async (request, response) => {
 };
 exports.tutorial_detail_read = async (request, response) => {
     const id_tutorial = request.query.id;
-    const tutorial_description = await tutorial_model_detail.find({ tutorial_id: id_tutorial });
+    const tutorial_description = await tutorial_model_detail.findOne({ tutorial_id: id_tutorial });
     const tutorial_detail = await tutorial_model.findById(id_tutorial);
     //console.log(read_tutorial);
 
