@@ -8,13 +8,6 @@ export default class laboratory extends Component {
         return (
             <Fragment>
                 <Navigation selectedPage="laboratory" />
-                <section>
-
-                    <div className="mt-3">
-
-                        <Button style={{ borderRadius: 20, backgroundColor: "lightcoral", border: 0 }}>Primary</Button>
-                    </div>
-                </section>
                 <List_Tutorial />
             </Fragment>
         )

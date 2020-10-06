@@ -137,7 +137,7 @@ export default class About extends Component {
                         <div className="row no-gutters">
 
                             <Fragment>
-                                <Row className="align-items-center mb-5">
+                                <Row className="align-items-center mb-3">
                                     <div className="col-lg-6 mb-3">
                                         <img className="img-fluid  shadow-lg" src={require('../../../assets/user_images/' + photo)} alt="photo of Giovanni"></img>
                                     </div>
@@ -147,7 +147,7 @@ export default class About extends Component {
                                     </div>
                                 </Row>
                                 <Row>
-                                    <div className="col-lg-6  mb-5">
+                                    <div className="col-lg-6  mb-3">
                                         <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>Education</h4>
                                         <table className="w-100">
                                             {
@@ -161,7 +161,7 @@ export default class About extends Component {
                                             }
                                         </table>
                                     </div>
-                                    <div className="col-lg-6">
+                                    <div className="col-lg-6 mb-3">
                                         <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>Skills</h4>
 
                                         {

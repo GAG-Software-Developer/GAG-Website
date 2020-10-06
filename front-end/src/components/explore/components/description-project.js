@@ -183,8 +183,8 @@ export default class description_project extends Component {
                                     (key % 2 == 0) ?
                                         (
                                             <Row className="align-items-center mb-3" key={element._id}>
-                                                <div className="col-lg-7">
-                                                    <img className="img-fluid  shadow-lg" src={require('../../../assets/projek_images/' + element.image_detail)} alt="image1"></img>
+                                                <div className="col-lg-7 order-lg-2">
+                                                    <img className="img-fluid mb-3 shadow-lg" src={require('../../../assets/projek_images/' + element.image_detail)} alt="image1"></img>
                                                 </div>
                                                 <div className="col-lg-5">
                                                     <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>{element.title_detail}</h4>
@@ -194,12 +194,12 @@ export default class description_project extends Component {
                                         ) : (
                                             //If odd, shows the data in the right
                                             <Row className="align-items-center mb-3" key={element._id}>
+                                                <div className="col-lg-7 ">
+                                                    <img className="img-fluid mb-3 shadow-lg" src={require('../../../assets/projek_images/' + element.image_detail)} alt="image1"></img>
+                                                </div>
                                                 <div className="col-lg-5">
                                                     <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>{element.title_detail}</h4>
                                                     <p className="text-left">{element.text_detail}</p>
-                                                </div>
-                                                <div className="col-lg-7">
-                                                    <img className="img-fluid shadow-lg" src={require('../../../assets/projek_images/' + element.image_detail)} alt="image1"></img>
                                                 </div>
                                             </Row>
                                         )

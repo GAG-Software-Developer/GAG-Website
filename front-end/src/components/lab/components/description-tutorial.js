@@ -142,57 +142,63 @@ export default class description_tutorial extends Component {
             //If the data is exist
             if (dataIsSet) {
                 return (
-                    <Fragment>
-                        <Container className="w-50">
-                            <section className="text-left">
-                                <h1 className=" font-weight-bold" style={{ color: "lightseagreen" }}>{title}</h1>
-                                <small style={{ color: "lightcoral" }}><i className="text-dark">Written by</i> {writer}</small> <br></br>
-                                <small><i className="text-dark">Topics: </i>
-                                    {
-                                        attributes.map((element, key) =>
-                                            <Fragment>
-                                                <FontAwesomeIcon icon={['fab', this.getLogoSkill(element)]} />  {element} &nbsp;&nbsp;&nbsp;
-                                                    </Fragment>
-                                        )
-                                    }
-                                </small>
-                                <img className="img-fluid shadow-lg p-3 bg-white rounded mt-3" src={require('../../../assets/tutorial_images/' + image)} alt="image1"></img>
-                                <p className="mt-4">{overview}</p>
-                            </section>
-                            <section>
-                                {
-                                    tutorial_detail.map((element, key) =>
-                                        <div className="text-left" key={key}>
-                                            <h1 className="font-weight-bold">{element.title_detail}</h1>
-                                            <div>
-                                                {
 
-                                                    element.details.map((content) =>
-                                                        (content.type_detail.toLowerCase() === "text") ? <p>{content.text_detail}</p> :
-                                                            (content.type_detail.toLowerCase() === "highlight-list") ? <ul className="shadow-sm bg-light rounded pt-3 pb-3">{
-                                                                content.text_detail.split("|").map((list) =>
-                                                                    <li>{list}</li>
-                                                                )}</ul> : (content.type_detail.toLowerCase() === "list") ? <ul>{
+                    <Container>
+                        <Row>
+                            <div className="col-lg-2"></div>
+                            <div className="col-lg-8">
+                                <section className="text-left">
+                                    <h1 className=" font-weight-bold" style={{ color: "lightseagreen" }}>{title}</h1>
+                                    <small style={{ color: "lightcoral" }}><i className="text-dark">Written by</i> {writer}</small> <br></br>
+                                    <small><i className="text-dark">Topics: </i>
+                                        {
+                                            attributes.map((element, key) =>
+                                                <Fragment>
+                                                    <FontAwesomeIcon icon={['fab', this.getLogoSkill(element)]} />  {element} &nbsp;&nbsp;&nbsp;
+                                                    </Fragment>
+                                            )
+                                        }
+                                    </small>
+                                    <img className="img-fluid w-100 shadow-lg p-3 bg-white rounded mt-3" src={require('../../../assets/tutorial_images/' + image)} alt="image1"></img>
+                                    <p className="mt-4">{overview}</p>
+                                </section>
+                                <section>
+                                    {
+                                        tutorial_detail.map((element, key) =>
+                                            <div className="text-left" key={key}>
+                                                <h1 className="font-weight-bold">{element.title_detail}</h1>
+                                                <div>
+                                                    {
+
+                                                        element.details.map((content) =>
+                                                            (content.type_detail.toLowerCase() === "text") ? <p>{content.text_detail}</p> :
+                                                                (content.type_detail.toLowerCase() === "highlight-list") ? <ul className="shadow-sm bg-light rounded pt-3 pb-3">{
                                                                     content.text_detail.split("|").map((list) =>
                                                                         <li>{list}</li>
-                                                                    )}</ul> : (content.type_detail.toLowerCase() === "highlight-text") ? <p className="shadow-sm bg-light rounded p-3">{content.text_detail}</p> :
-                                                                        (content.type_detail.toLowerCase() === "quote") ? <p><i>“{content.text_detail}„</i></p> :
-                                                                            (content.type_detail.toLowerCase() === "image") ? <img className="img-fluid shadow-lg p-3 bg-white rounded mt-3 mb-4" src={require('../../../assets/tutorial_images/' + content.text_detail)} alt="image of tutorial content"></img> : <p></p>
-                                                    )
-                                                }
+                                                                    )}</ul> : (content.type_detail.toLowerCase() === "list") ? <ul>{
+                                                                        content.text_detail.split("|").map((list) =>
+                                                                            <li>{list}</li>
+                                                                        )}</ul> : (content.type_detail.toLowerCase() === "highlight-text") ? <p className="shadow-sm bg-light rounded p-3">{content.text_detail}</p> :
+                                                                            (content.type_detail.toLowerCase() === "quote") ? <p><i>“{content.text_detail}„</i></p> :
+                                                                                (content.type_detail.toLowerCase() === "image") ? <img className="img-fluid w-100 shadow-lg p-3 bg-white rounded mt-3 mb-4" src={require('../../../assets/tutorial_images/' + content.text_detail)} alt="image of tutorial content"></img> : <p></p>
+                                                        )
+                                                    }
+                                                </div>
                                             </div>
-                                        </div>
 
-                                    )
-                                }
-                            </section>
-                        </Container>
-                    </Fragment>
+                                        )
+                                    }
+                                </section>
+                            </div>
+                            <div className="col-lg-2"></div>
+                        </Row>
+
+                    </Container>
                 )
             } else {
                 //If the data is not exist
                 return (
-                    <h1>Full Description is not available yet</h1>
+                    <h1>Full content is not available yet</h1>
                 )
             }
         }
