@@ -9,8 +9,8 @@ const id_user = config['id_user'];
 const url_server = config['url_server'];
 
 export default class list_project extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
             projects: [],
             isLoading: true
@@ -34,7 +34,7 @@ export default class list_project extends Component {
 
     }
     render() {
-        const { projects, isLoading } = this.state;
+        const { isLoading, projects } = this.state;
         //console.log(projects);
         if (isLoading) {
             return (

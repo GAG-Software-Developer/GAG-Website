@@ -20,7 +20,6 @@ function App() {
 
         <Switch>
           <Route exact path='/Detail-Projek/:id_project' component={Detail_Project} />
-          <Route exact path='/Detail-Projek/{$id}' component={Detail_Project} />
         </Switch>
         <Switch>
           <Route exact path='/Detail-Tutorial/:id_tutorial' component={Detail_Tutorial} />

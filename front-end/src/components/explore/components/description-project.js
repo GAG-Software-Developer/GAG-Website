@@ -12,8 +12,8 @@ library.add(fab, faCoffee);
 const url_server = config['url_server'];
 
 export default class description_project extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
             description_project: [],
             detail_project: [],

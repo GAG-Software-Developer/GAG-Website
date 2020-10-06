@@ -38,8 +38,13 @@ exports.posting_create = async (request, response) => {
         attribute: request.body.attribute,
         link_posting: request.body.link_posting
     });
-    posting.save();
-    response.send(posting);
+    posting.save(async function (error) {
+        if (!error) {
+            response.status(200);
+        } else {
+            response.status(501);
+        }
+    })
 };
 exports.posting_read = async (request, response) => {
     //id_owner Ivan = 5f4c9eb7c715f9b7f943fe92
