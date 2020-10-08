@@ -147,7 +147,7 @@ export default class description_project extends Component {
                 return (
                     <Fragment>
                         <Container>
-                            <header>
+                            <section>
                                 <Row>
                                     <div className="col-lg-8">
                                         <h1 className="text-left font-weight-bold" style={{ color: "lightcoral" }}>{project_title}</h1>
@@ -176,13 +176,13 @@ export default class description_project extends Component {
 
                                     </div>
                                 </Row>
-                            </header>
+                            </section>
                             {
                                 description.map((element, key) =>
                                     //If even, shows description on the left
                                     (key % 2 == 0) ?
                                         (
-                                            <Row className="align-items-center mb-3" key={element._id}>
+                                            <Row className="align-items-center mt-5 text-secondary" key={element._id}>
                                                 <div className="col-lg-7 order-lg-2">
                                                     <img className="img-fluid mb-3 shadow-lg" src={require('../../../assets/projek_images/' + element.image_detail)} alt="image1"></img>
                                                 </div>
@@ -193,7 +193,7 @@ export default class description_project extends Component {
                                             </Row>
                                         ) : (
                                             //If odd, shows the data in the right
-                                            <Row className="align-items-center mb-3" key={element._id}>
+                                            <Row className="align-items-center mt-5 text-secondary" key={element._id}>
                                                 <div className="col-lg-7 ">
                                                     <img className="img-fluid mb-3 shadow-lg" src={require('../../../assets/projek_images/' + element.image_detail)} alt="image1"></img>
                                                 </div>

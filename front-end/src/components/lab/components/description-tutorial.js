@@ -115,41 +115,44 @@ export default class description_tutorial extends Component {
     render() {
         const { description, detail, isLoading } = this.state;
 
-        //Tutorial info
-        const title = detail.title_tutorial;
-        const attributes = detail.attribute_tutorial;
-        const writer = detail.writer_name_tutorial;
-        const image = detail.image_tutorial;
-
-        //Tutorial Content
-        const overview = description.overview;
-        const tutorial_detail = description.tutorial_detail;
-
-        var list_type_helper;
-
-        //Empty response indicator
-        const dataIsSet = description.length == 0 ? false : true;
-        //If still loading from back-end, shows loading screen
-        if (isLoading) {
+        if (description === null) {
+            //If the data is not exist
             return (
-                <Fragment>
-                    <Spinner className="mr-3" animation="grow" variant="primary" />
-                    <Spinner className="mr-3" animation="grow" variant="danger" />
-                    <Spinner className="mr-3" animation="grow" variant="warning" />
-                </Fragment>
+                <h1>Full content is not available yet</h1>
             )
         } else {
-            //If the data is exist
-            if (dataIsSet) {
+            //Tutorial info
+            const title = detail.title_tutorial;
+            const attributes = detail.attribute_tutorial;
+            const writer = detail.writer_name_tutorial;
+            const image = detail.image_tutorial;
+            const created_at = detail.created_at;
+
+            //Tutorial Content
+            const overview = description.overview;
+            const tutorial_detail = description.tutorial_detail;
+
+            //If still loading from back-end, shows loading screen
+            if (isLoading) {
+                return (
+                    <Fragment>
+                        <Spinner className="mr-3" animation="grow" variant="primary" />
+                        <Spinner className="mr-3" animation="grow" variant="danger" />
+                        <Spinner className="mr-3" animation="grow" variant="warning" />
+                    </Fragment>
+                )
+            } else {
+                //If the data is exist
+
                 return (
 
                     <Container>
                         <Row>
                             <div className="col-lg-2"></div>
-                            <div className="col-lg-8">
+                            <div className="col-lg-8 px-5" >
                                 <section className="text-left">
                                     <h1 className=" font-weight-bold" style={{ color: "lightseagreen" }}>{title}</h1>
-                                    <small style={{ color: "lightcoral" }}><i className="text-dark">Written by</i> {writer}</small> <br></br>
+                                    <small style={{ color: "lightcoral" }}><i className="text-dark">Written by</i> {writer} <i className="text-dark"> on {created_at}</i></small> <br></br>
                                     <small><i className="text-dark">Topics: </i>
                                         {
                                             attributes.map((element, key) =>
@@ -165,8 +168,8 @@ export default class description_tutorial extends Component {
                                 <section>
                                     {
                                         tutorial_detail.map((element, key) =>
-                                            <div className="text-left" key={key}>
-                                                <h1 className="font-weight-bold">{element.title_detail}</h1>
+                                            <div className="text-left mt-5" key={key} >
+                                                <h3 className="font-weight-bold">{element.title_detail}</h3>
                                                 <div>
                                                     {
 
@@ -193,14 +196,11 @@ export default class description_tutorial extends Component {
                             <div className="col-lg-2"></div>
                         </Row>
 
-                    </Container>
+                    </Container >
                 )
-            } else {
-                //If the data is not exist
-                return (
-                    <h1>Full content is not available yet</h1>
-                )
+
             }
         }
+
     }
 }

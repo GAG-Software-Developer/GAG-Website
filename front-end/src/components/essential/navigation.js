@@ -8,9 +8,9 @@ export default function navigation(param) {
 
         <Fragment>
 
-            <Navbar className="justify-content-center navbar-expand-lg shadow p-3 mb-5 rounded bg-white" sticky="top" expand="lg" style={{ opacity: 0.96 }}>
+            <Navbar className="justify-content-center navbar-expand-lg shadow-none p-3 mb-5 rounded bg-white" sticky="top" expand="lg" style={{ opacity: 0.96 }}>
                 <Container>
-                    <Navbar.Brand style={{ fontWeight: "bold" }} >Giovanni <NavbarBrand style={{ color: "lightcoral" }}> Works</NavbarBrand></Navbar.Brand>
+                    <Link to="/"><Navbar.Brand style={{ fontWeight: "bold" }} >Giovanni <NavbarBrand className="logo" style={{ color: "black" }}> Works</NavbarBrand></Navbar.Brand></Link>
 
                     <Navbar.Toggle aria-controls="menu" />
                     <Navbar.Collapse id="menu" className="justify-content-center">
