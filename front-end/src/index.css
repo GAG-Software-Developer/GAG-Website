@@ -25,6 +25,10 @@ p {
   font-family: "Zilla Slab Highlight", cursive;
 }
 
+.san-serif-font {
+  font-family: "Roboto", sans-serif;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

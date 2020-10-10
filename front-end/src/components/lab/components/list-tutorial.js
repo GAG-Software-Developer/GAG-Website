@@ -16,25 +16,32 @@ export default class list_tutorial extends Component {
         super(props);
         this.state = {
             tutorials: [],
-            isLoading: true
+            isLoading: true,
+            errorMessage: ''
         }
     }
+    // Load data from backend after the components have mounted
     componentDidMount() {
+        // Do HTTP Request with Axios
         axios.get(url_server + 'api/tutorial')
-            .then(response => this.setState({ tutorials: response.data, isLoading: false }));
+            // Set the state with recieving data
+            .then(response => this.setState({ tutorials: response.data, isLoading: false }))
+            // Show error message if it is failed
+            .catch(error => this.setState({ errorMessage: error }));
     }
+    // Generate random colour for various purpose
     getRandomBadgeColor() {
-        const color = Math.floor(Math.random() * (7 - 1)) + 1;
+        //Get random number between from 1 to 6
+        const color = Math.floor(Math.random() * (6)) + 1;
         switch (color) {
-            case 1: return "primary"
-            case 2: return "secondary"
-            case 3: return "success"
-            case 4: return "danger"
-            case 5: return "warning"
-            case 6: return "info"
-            default: return "dark"
+            case 1: return "primary"    // Blue
+            case 2: return "secondary"  // Grey
+            case 3: return "success"    // Green
+            case 4: return "danger"     // Red
+            case 5: return "warning"    // Yellow
+            case 6: return "info"       // Tosca
+            default: return "dark"      // Black
         }
-
     }
     render() {
         const { tutorials, isLoading } = this.state;

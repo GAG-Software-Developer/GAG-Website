@@ -31,7 +31,6 @@ export default class list_project extends Component {
             case 6: return "info"
             default: return "dark"
         }
-
     }
     render() {
         const { isLoading, projects } = this.state;

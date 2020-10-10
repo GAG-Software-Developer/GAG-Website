@@ -143,7 +143,7 @@ export default class About extends Component {
                                     </div>
                                     <div className="col-lg-6">
                                         <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>{fullname}</h4>
-                                        <p className="text-left">{description}</p>
+                                        <p className="text-left san-serif-font">{description}</p>
                                     </div>
                                 </Row>
                                 <Row>

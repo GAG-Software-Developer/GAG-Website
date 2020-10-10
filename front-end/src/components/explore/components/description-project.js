@@ -55,7 +55,7 @@ export default class description_project extends Component {
                 return "php"
                 break;
 
-            case "amazon cognito":
+            case "amazon web services":
                 return "aws"
                 break;
             case "aws":
@@ -171,8 +171,9 @@ export default class description_project extends Component {
                                                 )
                                             }
                                         </table>
-                                        <h4 className="text-left font-weight-bold mt-2" style={{ color: "lightcoral" }}>Source</h4>
-                                        {(link != null) ? (<a href={link} target="_blank"><p className="float-left btn btn-info" >See Document</p></a>) : (<p className="text-left">No additional source is available</p>)}
+                                        {(link != null) ? (<Fragment> <h4 className="text-left font-weight-bold mt-2" style={{ color: "lightcoral" }}>Source</h4><a href={link} target="_blank"><p className="float-left btn btn-info" >See Document</p></a></Fragment>) : (<Fragment></Fragment>)}
+
+
 
                                     </div>
                                 </Row>
