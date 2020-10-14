@@ -36,15 +36,19 @@ exports.posting_create = async (request, response) => {
         owner_id_posting: request.body.owner_id_posting,
         owner_name_posting: request.body.owner_name_posting,
         attribute: request.body.attribute,
-        link_posting: request.body.link_posting
+        link_posting: request.body.link_posting,
+        created_at: request.body.created_at
     });
+
     posting.save(async function (error) {
         if (!error) {
-            response.status(200);
+            response.send("Success");
         } else {
-            response.status(501);
+            response.send("Failed");
         }
     })
+
+    //response.send("Haloo")
 };
 exports.posting_read = async (request, response) => {
     //id_owner Ivan = 5f4c9eb7c715f9b7f943fe92
@@ -53,7 +57,7 @@ exports.posting_read = async (request, response) => {
     //Get owner if from get parameter
     const id_owner = request.query.id;
     //Find project based on the owner id
-    const read_posting = await posting_model.find({ owner_id_posting: id_owner })
+    const read_posting = await posting_model.find({ owner_id_posting: id_owner }).sort({ created_at: 'desc' })
     //const read_posting = await posting_model.find()
     //Send the result back
     response.send(read_posting);
@@ -82,11 +86,11 @@ exports.posting_update = async (request, response) => {
             image_posting: request.body.image_posting,
             quote_posting: request.body.quote_posting,
             type_posting: request.body.type_posting,
-            year_of_posting: request.body.year_of_posting,
             owner_id_posting: request.body.owner_id_posting,
             owner_name_posting: request.body.owner_name_posting,
             attribute: request.body.attribute,
-            link_posting: request.body.link_posting
+            link_posting: request.body.link_posting,
+            created_at: request.body.created_at
         }
     });
     response.send('Updated!');

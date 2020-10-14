@@ -174,16 +174,18 @@ export default class description_tutorial extends Component {
                                                     {
 
                                                         element.details.map((content) =>
-                                                            (content.type_detail.toLowerCase() === "text") ? <p>{content.text_detail}</p> :
-                                                                (content.type_detail.toLowerCase() === "highlight-list") ? <ul className="shadow-sm bg-light rounded pt-3 pb-3">{
-                                                                    content.text_detail.split("|").map((list) =>
-                                                                        <li>{list}</li>
-                                                                    )}</ul> : (content.type_detail.toLowerCase() === "list") ? <ul>{
-                                                                        content.text_detail.split("|").map((list) =>
-                                                                            <li>{list}</li>
-                                                                        )}</ul> : (content.type_detail.toLowerCase() === "highlight-text") ? <p className="shadow-sm bg-light rounded p-3">{content.text_detail}</p> :
-                                                                            (content.type_detail.toLowerCase() === "quote") ? <p><i>“{content.text_detail}„</i></p> :
-                                                                                (content.type_detail.toLowerCase() === "image") ? <img className="img-fluid w-100 shadow-lg p-3 bg-white rounded mt-3 mb-4" src={require('../../../assets/tutorial_images/' + content.text_detail)} alt="image of tutorial content"></img> : <p></p>
+                                                            (content.type_detail.toLowerCase() === "code") ? <p className="shadow-sm bg-light rounded p-3"><small>{content.text_detail}</small></p> :
+                                                                (content.type_detail.toLowerCase() === "bold-text") ? <h5><b>{content.text_detail}</b></h5> :
+                                                                    (content.type_detail.toLowerCase() === "text") ? <p>{content.text_detail}</p> :
+                                                                        (content.type_detail.toLowerCase() === "highlight-list") ? <ul className="shadow-sm bg-light rounded pt-3 pb-3">{
+                                                                            content.text_detail.split("|").map((list) =>
+                                                                                <li>{list}</li>
+                                                                            )}</ul> : (content.type_detail.toLowerCase() === "list") ? <ul>{
+                                                                                content.text_detail.split("|").map((list) =>
+                                                                                    <li>{list}</li>
+                                                                                )}</ul> : (content.type_detail.toLowerCase() === "highlight-text") ? <p className="shadow-sm bg-light rounded p-3">{content.text_detail}</p> :
+                                                                                    (content.type_detail.toLowerCase() === "quote") ? <p><i>“{content.text_detail}„</i></p> :
+                                                                                        (content.type_detail.toLowerCase() === "image") ? <img className="img-fluid w-100 shadow-lg p-3 bg-white rounded mt-3 mb-4" src={require('../../../assets/tutorial_images/' + content.text_detail)} alt="image of tutorial content"></img> : <p></p>
                                                         )
                                                     }
                                                 </div>
