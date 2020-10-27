@@ -10,15 +10,26 @@
 @import url(https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Faster+One&family=Libre+Barcode+39+Extended+Text&family=Zilla+Slab+Highlight:wght@700&display=swap);
 @charset "UTH-8";
 
+@font-face {
+  font-family: CheltenhamBook;
+  src: url(./assets/fonts/CheltenhamStdBook.otf);
+}
+@font-face {
+  font-family: CheltenhamBold;
+  src: url(./assets/fonts/CheltenhamStdBold.otf);
+}
+@font-face {
+  font-family: FontHelvetica;
+  src: url(./assets/fonts/FreeSans.ttf);
+}
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
 }
 p {
-  font-family: "Lora", serif;
+  font-family: "CheltenhamBook";
   font-size: 20px;
   line-height: 1.7;
 }

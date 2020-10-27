@@ -56,8 +56,8 @@ export default class list_project extends Component {
                                                 <img className="img-fluid" src={require('../../../assets/projek_images/' + project.image_posting)} alt="" />
                                             </div>
                                             <Card.Body>
-                                                <Card.Title>{project.title_posting}</Card.Title>
-                                                <footer className="blockquote-footer">
+                                                <Card.Title className="mb-0">{project.title_posting}</Card.Title>
+                                                <footer className="blockquote-footer mt-1 mb-1">
                                                     <small className="text-muted">
                                                         <cite title="Source Title">{project.quote_posting}</cite>
                                                     </small>

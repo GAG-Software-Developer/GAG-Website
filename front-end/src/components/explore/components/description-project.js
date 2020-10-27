@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Container, Spinner, Row } from 'react-bootstrap';
+import { Container, Spinner, Row, Card } from 'react-bootstrap';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -161,17 +161,14 @@ export default class description_project extends Component {
 
 
                                             {
-                                                attribute.map((element, key) =>
+                                                attribute.map((skill, key) =>
 
-                                                    <tr key={key}>
-                                                        <td style={{ textAlign: "center" }}><FontAwesomeIcon icon={['fab', this.getLogoSkill(element)]} /></td>
-                                                        <td style={{ textAlign: "left" }}>{element}</td>
-                                                    </tr>
+                                                    <li style={{ listStyleType: "none" }} className="float-left mr-4 mb-2"><FontAwesomeIcon icon={['fab', this.getLogoSkill(skill)]} /> {skill}</li>
 
                                                 )
                                             }
                                         </table>
-                                        {(link != null) ? (<Fragment> <h4 className="text-left font-weight-bold mt-2" style={{ color: "lightcoral" }}>Source</h4><a href={link} target="_blank"><p className="float-left btn btn-info" >See Document</p></a></Fragment>) : (<Fragment></Fragment>)}
+                                        {(link != null) ? (<Fragment> <h4 className="text-left font-weight-bold mt-2" style={{ color: "lightcoral" }}>Source</h4><a href={link} target="_blank"><p className="float-left btn btn-info san-serif-font " >See Document</p></a></Fragment>) : (<Fragment></Fragment>)}
 
 
 

@@ -121,12 +121,14 @@ export default class description_tutorial extends Component {
                 <h1>Full content is not available yet</h1>
             )
         } else {
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const date = new Date(detail.created_at);
             //Tutorial info
             const title = detail.title_tutorial;
             const attributes = detail.attribute_tutorial;
             const writer = detail.writer_name_tutorial;
             const image = detail.image_tutorial;
-            const created_at = detail.created_at;
+            const created_at = date.toLocaleDateString("en-GB", options);
 
             //Tutorial Content
             const overview = description.overview;
@@ -152,12 +154,12 @@ export default class description_tutorial extends Component {
                             <div className="col-lg-8 px-5" >
                                 <section className="text-left">
                                     <h1 className=" font-weight-bold" style={{ color: "lightseagreen" }}>{title}</h1>
-                                    <small style={{ color: "lightcoral" }}><i className="text-dark">Written by</i> {writer} <i className="text-dark"> on {created_at}</i></small> <br></br>
-                                    <small><i className="text-dark">Topics: </i>
+                                    <small>Written by  <strong style={{ color: "lightcoral" }}>{writer}</strong>  on {created_at}</small> <br></br>
+                                    <small>Topics:&nbsp;
                                         {
                                             attributes.map((element, key) =>
                                                 <Fragment>
-                                                    <FontAwesomeIcon icon={['fab', this.getLogoSkill(element)]} />  {element} &nbsp;&nbsp;&nbsp;
+                                                    <FontAwesomeIcon icon={['fab', this.getLogoSkill(element)]} />  {element} &nbsp;&nbsp;
                                                     </Fragment>
                                             )
                                         }

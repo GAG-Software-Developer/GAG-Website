@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1c6d17633c876efde6195875e9c93e2c",
+    "revision": "cae8ea94c1f47b04a4cce051e1feb38c",
     "url": "/index.html"
   },
   {
-    "revision": "1398bc92f68e1193a9c3",
+    "revision": "d4f6cda792d50dce3604",
     "url": "/static/css/2.11829350.chunk.css"
   },
   {
-    "revision": "7d872888531a4669d15c",
-    "url": "/static/css/main.da5c2a87.chunk.css"
+    "revision": "ed76c5c8ffe01bec36b4",
+    "url": "/static/css/main.99805718.chunk.css"
   },
   {
-    "revision": "1398bc92f68e1193a9c3",
-    "url": "/static/js/2.6843cef6.chunk.js"
+    "revision": "d4f6cda792d50dce3604",
+    "url": "/static/js/2.58321357.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/static/js/2.6843cef6.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.58321357.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7d872888531a4669d15c",
-    "url": "/static/js/main.cad820f1.chunk.js"
+    "revision": "ed76c5c8ffe01bec36b4",
+    "url": "/static/js/main.4c0ba520.chunk.js"
   },
   {
     "revision": "b757cbfa5b52942fc711",
@@ -34,10 +34,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "80b1ae330c4fc7e2e263b6a103c2fff8",
     "url": "/static/media/1.80b1ae33.png"
-  },
-  {
-    "revision": "a682af0d96abb8e881f1112cab156b15",
-    "url": "/static/media/1.a682af0d.jpg"
   },
   {
     "revision": "d81e60234796c74e73fd0a1fb9685c1f",
@@ -84,6 +80,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/CheltenhamStdBook.fe926cc2.otf"
   },
   {
+    "revision": "f8f89c1c43ac513cdc8451fee0062032",
+    "url": "/static/media/FreeSans.f8f89c1c.ttf"
+  },
+  {
     "revision": "9444f8769787470bfa0106f87a69d5eb",
     "url": "/static/media/Resume Ivan .9444f876.pdf"
   },
@@ -120,12 +120,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/background.76c7173b.png"
   },
   {
-    "revision": "bd1fb6b0b137d569e91e15bb3a41932e",
-    "url": "/static/media/background.bd1fb6b0.jpg"
-  },
-  {
-    "revision": "4b147b228340259a62f6ff42fc66f7aa",
-    "url": "/static/media/cryptosystem.4b147b22.png"
+    "revision": "e8ca05303e83d3f5a2e37302f20e31d6",
+    "url": "/static/media/bg.e8ca0530.jpg"
   },
   {
     "revision": "43e850d40e1e476b797a7c5102d640f7",
@@ -148,8 +144,76 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/giovanni_tjahjono.8985c93c.jpg"
   },
   {
-    "revision": "4331a8bdb8fbb94ce7f663223ef14949",
-    "url": "/static/media/hearttalk.4331a8bd.jpg"
+    "revision": "43bfd3cd4da0cba68bd978393c734e2b",
+    "url": "/static/media/giovanniworks.43bfd3cd.png"
+  },
+  {
+    "revision": "33fda7924d2f9c57185093008de28a46",
+    "url": "/static/media/giovanniworks1.33fda792.png"
+  },
+  {
+    "revision": "1ed75f52f63fb04f5a8a3bfb3321dafd",
+    "url": "/static/media/giovanniworks1google.1ed75f52.png"
+  },
+  {
+    "revision": "72b66bb372e8eee601fe6e6855807630",
+    "url": "/static/media/giovanniworks2.72b66bb3.png"
+  },
+  {
+    "revision": "ba937503f14e012ce2e4e00e84ea3d32",
+    "url": "/static/media/giovanniworks3.ba937503.png"
+  },
+  {
+    "revision": "acde0a8f645573207ad5b35ee5a2bfb1",
+    "url": "/static/media/giovanniworks4.acde0a8f.png"
+  },
+  {
+    "revision": "41a0dca8159e72407ac90080aa28923e",
+    "url": "/static/media/github.41a0dca8.png"
+  },
+  {
+    "revision": "35fc7ffca13de463aa6dfdcbb82e9f0d",
+    "url": "/static/media/github1.35fc7ffc.png"
+  },
+  {
+    "revision": "c93ecae7910b07c59b5e9b18e6ddf9f9",
+    "url": "/static/media/github2.c93ecae7.png"
+  },
+  {
+    "revision": "37b334c019ba100e111effa0ebb6aa75",
+    "url": "/static/media/github3.37b334c0.png"
+  },
+  {
+    "revision": "4ff645b2197e38c85aff6c5149598865",
+    "url": "/static/media/github4.4ff645b2.png"
+  },
+  {
+    "revision": "7d1ef90dc511747014880e1bfe9945e0",
+    "url": "/static/media/github5.7d1ef90d.png"
+  },
+  {
+    "revision": "e0bb165615a681c05c0823208dccf79a",
+    "url": "/static/media/handup.e0bb1656.png"
+  },
+  {
+    "revision": "102a8999660491b72034c0319dbd5ccc",
+    "url": "/static/media/handup1.102a8999.png"
+  },
+  {
+    "revision": "81d5b80af11a9b9b4a784cdae7fe7a16",
+    "url": "/static/media/handup2.81d5b80a.png"
+  },
+  {
+    "revision": "fcbab22921dd92e95585eeada2a55555",
+    "url": "/static/media/handup3.fcbab229.png"
+  },
+  {
+    "revision": "46444163a4ec43dbc52c348bae6cded3",
+    "url": "/static/media/handup5.46444163.png"
+  },
+  {
+    "revision": "831f34169704e031d8092c8900df352c",
+    "url": "/static/media/hearttalk.831f3416.png"
   },
   {
     "revision": "1346fe13848700d0bfadc584ce21f97d",
@@ -192,16 +256,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/hearttalk9.183dadca.jpg"
   },
   {
-    "revision": "1ffb9f81114b2852d3f737cd6cd41919",
-    "url": "/static/media/lumbung_seni.1ffb9f81.jpg"
+    "revision": "0fa834acade92b4adf5aee4eb6239192",
+    "url": "/static/media/nitecesire1.0fa834ac.png"
   },
   {
-    "revision": "d8fc7385963736ceb26fd1f19b7f71d8",
-    "url": "/static/media/lumbung_seni.d8fc7385.png"
-  },
-  {
-    "revision": "2c799245aac62d0a7babeb9b19917201",
-    "url": "/static/media/nitecesire.2c799245.png"
+    "revision": "fd9e0eb315119e50ded1367b42023631",
+    "url": "/static/media/nitecesire2.fd9e0eb3.png"
   },
   {
     "revision": "fb0f4510053350cf02cfdf813cc4f2ec",
@@ -210,6 +270,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "71c688fc32877d571f9f31286540647c",
     "url": "/static/media/photoIvan.71c688fc.jpg"
+  },
+  {
+    "revision": "434f50342df550ad49b42d88a2839968",
+    "url": "/static/media/royalspectre.434f5034.png"
   },
   {
     "revision": "1909b23761c5b5ef70f4629ea4c5156b",
@@ -226,6 +290,22 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "dde1dd4c18cbd95fc50eb771add9a3f8",
     "url": "/static/media/royalspectre4.dde1dd4c.jpg"
+  },
+  {
+    "revision": "2a1a2cffc59292d751c249fe669909a7",
+    "url": "/static/media/simpleatm.2a1a2cff.png"
+  },
+  {
+    "revision": "20cf621403b6a6fff2610da3c9074ba6",
+    "url": "/static/media/simpleatm1.20cf6214.png"
+  },
+  {
+    "revision": "46d208de6e2aa9f08503697b53c840d2",
+    "url": "/static/media/simpleatm2.46d208de.png"
+  },
+  {
+    "revision": "3774e4cbf4cf401c8a9631760b637dbb",
+    "url": "/static/media/simpleatm3.3774e4cb.png"
   },
   {
     "revision": "b2bb9a488fbe21229a6f4efa8d52398e",
