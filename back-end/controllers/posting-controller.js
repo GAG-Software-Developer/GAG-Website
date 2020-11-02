@@ -77,6 +77,12 @@ exports.posting_read = async (request, response) => {
     //     });
     // });
 };
+
+//POST  - posting 
+//PUT   - posting
+//GET   - posting
+//DELETE   - posting
+
 exports.posting_update = async (request, response) => {
     const user_id = request.body.user_id;
     //await posting_model.findByIdAndUpdate(id, { "owner_posting": "cah" });

@@ -134,64 +134,85 @@ export default class About extends Component {
             return (
                 <Fragment>
                     <Container>
-                        <div className="row no-gutters">
 
-                            <Fragment>
-                                <Row className="align-items-center mb-3">
-                                    <div className="col-lg-6 mb-3">
-                                        <img className="img-fluid  shadow-lg" src={require('../../../assets/user_images/' + photo)} alt="photo of Giovanni"></img>
-                                    </div>
-                                    <div className="col-lg-6">
-                                        <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>{fullname}</h4>
-                                        <p className="text-left san-serif-font">{description}</p>
-                                    </div>
-                                </Row>
-                                <Row>
-                                    <div className="col-lg-6  mb-3">
-                                        <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>Education</h4>
-                                        <table className="w-100">
-                                            {
-                                                educations.map((education, key) =>
 
-                                                    <tr className="text-left align-top" key={key}>
-                                                        <td className="w-25"><b style={{ color: "lightcoral" }}>{education.enrollment_year}</b></td>
-                                                        <td><b>{education.university_name}</b><br></br> <i>{education.course}</i></td>
-                                                    </tr>
-                                                )
-                                            }
-                                        </table>
-                                    </div>
-                                    <div className="col-lg-6 mb-3">
-                                        <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>Skills</h4>
-
+                        <Fragment>
+                            <Row className="align-items-center mb-5">
+                                <div className="col-lg-6 mb-3">
+                                    <img className="img-fluid  shadow-lg" src={require('../../../assets/user_images/' + photo)} alt="photo of Giovanni"></img>
+                                </div>
+                                <div className="col-lg-6">
+                                    <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>{fullname}</h4>
+                                    <p className="text-left san-serif-font">{description}</p>
+                                </div>
+                            </Row>
+                            <Row>
+                                <div className="col-lg-6  mb-5">
+                                    <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>Education</h4>
+                                    <table className="w-100">
                                         {
-                                            skills.map((skill, key) =>
-                                                <li style={{ listStyleType: "none" }} className="float-left mr-4 mb-2"><FontAwesomeIcon icon={['fab', this.getLogoSkill(skill)]} /> {skill}</li>
+                                            educations.map((education, key) =>
+
+                                                <tr className="text-left align-top" key={key}>
+                                                    <td className="w-25"><b style={{ color: "lightcoral" }}>{education.enrollment_year}</b></td>
+                                                    <td><b>{education.university_name}</b><br></br> <i>{education.course}</i></td>
+                                                </tr>
                                             )
                                         }
+                                    </table>
+                                </div>
+                                <div className="col-lg-6 mb-5">
+                                    <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>Skills</h4>
 
-                                    </div>
-                                </Row>
-                                <Row>
-                                    <div className="col-lg-12  mb-5">
-                                        <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>Work Experiences</h4>
-                                        <table>
-                                            {
-                                                work_experiences.map((work, key) =>
+                                    {
+                                        skills.map((skill, key) =>
+                                            <li style={{ listStyleType: "none" }} className="float-left mr-4 mb-2"><FontAwesomeIcon icon={['fab', this.getLogoSkill(skill)]} /> {skill}</li>
+                                        )
+                                    }
 
-                                                    <tr className="text-left align-top" key={key}>
-                                                        <td style={{ width: 200 }}><b style={{ color: "lightcoral" }}>{work.year_of_work}</b></td>
-                                                        <td ><b>{work.company_name}</b> <br></br> <i>{work.role}</i></td>
-                                                    </tr>
-                                                )
-                                            }
-                                        </table>
-                                    </div>
+                                </div>
+                            </Row>
+                            <Row>
+                                <div className="col-lg-6  mb-5">
+                                    <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>Work Experiences</h4>
+                                    <table className="w-100">
+                                        {
+                                            work_experiences.map((work, key) =>
 
-                                </Row>
-                            </Fragment>
+                                                <tr className="text-left align-top" key={key}>
+                                                    <td style={{ width: 200 }}><b style={{ color: "lightcoral" }}>{work.year_of_work}</b></td>
+                                                    <td ><b>{work.company_name}</b> <br></br> <i>{work.role}</i></td>
+                                                </tr>
+                                            )
+                                        }
+                                    </table>
+                                </div>
+                                <div className="col-lg-6  mb-5">
+                                    <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>Version</h4>
 
-                        </div>
+                                    <table className="text-left">
+                                        <tr>
+                                            <td className="text-right" style={{ color: "lightcoral" }}><strong>Name</strong></td>
+                                            <td>: Giovanni Works</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="text-right" style={{ color: "lightcoral" }}><strong>Codename</strong></td>
+                                            <td>: Amsterdam I</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="text-right" style={{ color: "lightcoral" }}><strong>Version</strong></td>
+                                            <td>: 1.0.1</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="text-right" style={{ color: "lightcoral" }}><strong>Update</strong></td>
+                                            <td>: Refinement on explore and tutorial element</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </Row>
+
+                        </Fragment>
+
                     </Container>
                 </Fragment>
             )

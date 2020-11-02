@@ -62,13 +62,12 @@ export default class list_tutorial extends Component {
                             {tutorials.map((tutorial) =>
                                 <div className="col-lg-4" key={tutorial._id}>
                                     <Link className="btn" to={'/Detail-Tutorial/' + tutorial._id}>
-                                        <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item">
+                                        <Card className="border shadow-sm p-3 mb-5 portfolio-item" style={{ borderRadius: "15px" }}>
                                             <div className="portfolio-item">
-                                                <img className="img-fluid" src={require('../../../assets/tutorial_images/' + tutorial.image_tutorial)} alt="" />
+                                                <img className="img-fluid rounded" src={require('../../../assets/tutorial_images/' + tutorial.image_tutorial)} alt="" />
                                             </div>
                                             <Card.Body>
                                                 <Card.Title>{tutorial.title_tutorial}</Card.Title>
-
                                             </Card.Body>
                                         </Card>
                                     </Link>

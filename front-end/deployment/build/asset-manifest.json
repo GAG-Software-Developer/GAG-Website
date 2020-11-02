@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.99805718.chunk.css",
-    "main.js": "/static/js/main.4c0ba520.chunk.js",
-    "main.js.map": "/static/js/main.4c0ba520.chunk.js.map",
+    "main.js": "/static/js/main.f3e735b1.chunk.js",
+    "main.js.map": "/static/js/main.f3e735b1.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e327d292.js",
     "runtime-main.js.map": "/static/js/runtime-main.e327d292.js.map",
     "static/css/2.11829350.chunk.css": "/static/css/2.11829350.chunk.css",
-    "static/js/2.58321357.chunk.js": "/static/js/2.58321357.chunk.js",
-    "static/js/2.58321357.chunk.js.map": "/static/js/2.58321357.chunk.js.map",
+    "static/js/2.9faa1e08.chunk.js": "/static/js/2.9faa1e08.chunk.js",
+    "static/js/2.9faa1e08.chunk.js.map": "/static/js/2.9faa1e08.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.28d1a548d16484513393f35fa42272b3.js": "/precache-manifest.28d1a548d16484513393f35fa42272b3.js",
+    "precache-manifest.9d746b2226eca84898f972977bbf54e5.js": "/precache-manifest.9d746b2226eca84898f972977bbf54e5.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.11829350.chunk.css.map": "/static/css/2.11829350.chunk.css.map",
     "static/css/main.99805718.chunk.css.map": "/static/css/main.99805718.chunk.css.map",
-    "static/js/2.58321357.chunk.js.LICENSE.txt": "/static/js/2.58321357.chunk.js.LICENSE.txt",
+    "static/js/2.9faa1e08.chunk.js.LICENSE.txt": "/static/js/2.9faa1e08.chunk.js.LICENSE.txt",
     "static/media/1.jpg": "/static/media/1.2bad1291.jpg",
     "static/media/1.png": "/static/media/1.d81e6023.png",
     "static/media/12.png": "/static/media/12.3c920d57.png",
@@ -68,6 +68,10 @@
     "static/media/hearttalk7.jpg": "/static/media/hearttalk7.2bad1291.jpg",
     "static/media/hearttalk8.jpg": "/static/media/hearttalk8.fb8c01e0.jpg",
     "static/media/hearttalk9.jpg": "/static/media/hearttalk9.183dadca.jpg",
+    "static/media/idea.jpg": "/static/media/idea.ab956336.jpg",
+    "static/media/idea1.jpg": "/static/media/idea1.0cc806ab.jpg",
+    "static/media/idea2.jpg": "/static/media/idea2.39697a4e.jpg",
+    "static/media/idea3.jpg": "/static/media/idea3.0c9c67a5.jpg",
     "static/media/nitecesire1.png": "/static/media/nitecesire1.0fa834ac.png",
     "static/media/nitecesire2.png": "/static/media/nitecesire2.fd9e0eb3.png",
     "static/media/normansprinciples.png": "/static/media/normansprinciples.fb0f4510.png",
@@ -86,8 +90,8 @@
   "entrypoints": [
     "static/js/runtime-main.e327d292.js",
     "static/css/2.11829350.chunk.css",
-    "static/js/2.58321357.chunk.js",
+    "static/js/2.9faa1e08.chunk.js",
     "static/css/main.99805718.chunk.css",
-    "static/js/main.4c0ba520.chunk.js"
+    "static/js/main.f3e735b1.chunk.js"
   ]
 }

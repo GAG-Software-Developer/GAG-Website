@@ -13,7 +13,7 @@ import Detail_Tutorial from './components/lab/pages/detail-tutorial';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-light">
       <Router>
 
         <Route exact path='/' component={Explore} />

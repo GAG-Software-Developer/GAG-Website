@@ -51,11 +51,11 @@ export default class list_project extends Component {
                             {projects.map((project) =>
                                 <div className="col-lg-4" key={project._id}>
                                     <Link className="btn" to={'/Detail-Projek/' + project._id}>
-                                        <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item">
-                                            <div className="portfolio-item">
-                                                <img className="img-fluid" src={require('../../../assets/projek_images/' + project.image_posting)} alt="" />
+                                        <Card className="border-1 shadow-sm p-3 mb-5 portfolio-item" style={{ borderRadius: "15px" }}>
+                                            <div className="portfolio-item ">
+                                                <img className="img-fluid rounded" src={require('../../../assets/projek_images/' + project.image_posting)} alt="" />
                                             </div>
-                                            <Card.Body>
+                                            <Card.Body >
                                                 <Card.Title className="mb-0">{project.title_posting}</Card.Title>
                                                 <footer className="blockquote-footer mt-1 mb-1">
                                                     <small className="text-muted">
