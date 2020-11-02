@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Jumbotron } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import List_Projek from '../components/list-project';
 import Navigation from '../../essential/navigation';
 import './../../../styles/navigasi.css';

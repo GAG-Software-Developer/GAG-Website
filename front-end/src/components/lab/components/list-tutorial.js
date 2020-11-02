@@ -1,6 +1,6 @@
 
 import React, { Component, Fragment } from 'react'
-import { Container, Card, Spinner, Badge } from 'react-bootstrap';
+import { Container, Card, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../../../styles/stylish-portfolio.css'
 import '../../../styles/navigasi.css';

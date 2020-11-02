@@ -1,12 +1,11 @@
 import React, { Component, Fragment } from 'react'
-import { Container, Card, Spinner, Badge, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Container, Spinner, Row } from 'react-bootstrap';
 import '../../../styles/stylish-portfolio.css'
 import '../../../styles/navigasi.css';
 import axios from 'axios';
 import config from '../../../config.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBaby, faCoffee, faComments, faCompass, faDatabase, faEnvelope, faFlask, faLock, faSmile, faTools, faUsers, faVial } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 library.add(fab, faCoffee);

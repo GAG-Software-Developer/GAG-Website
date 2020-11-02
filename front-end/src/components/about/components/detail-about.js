@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react'
-import { Container, Row, Card, Col, Spinner, Badge } from 'react-bootstrap';
+import { Container, Row, Spinner } from 'react-bootstrap';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBaby, faCoffee, faComments, faCompass, faDatabase, faEnvelope, faFlask, faLock, faSmile, faTools, faUsers, faVial } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import config from '../../../config.json';
@@ -139,7 +139,7 @@ export default class About extends Component {
                         <Fragment>
                             <Row className="align-items-center mb-5">
                                 <div className="col-lg-6 mb-3">
-                                    <img className="img-fluid  shadow-lg" src={require('../../../assets/user_images/' + photo)} alt="photo of Giovanni"></img>
+                                    <img className="img-fluid border shadow-sm" style={{ borderRadius: "15px" }} src={require('../../../assets/user_images/' + photo)} alt="photo of Giovanni"></img>
                                 </div>
                                 <div className="col-lg-6">
                                     <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>{fullname}</h4>
