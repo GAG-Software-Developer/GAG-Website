@@ -4,30 +4,14 @@ import { Container, Card, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../../../styles/stylish-portfolio.css'
 import '../../../styles/navigasi.css';
-import axios from 'axios';
+import { connect } from 'react-redux';
+import { readLaboratory } from './../../../redux/action/readLaboratory';
 
-import config from '../../../config.json';
-const id_user = config['id_user'];
-const url_server = config['url_server'];
 
-export default class list_tutorial extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            tutorials: [],
-            isLoading: true,
-            errorMessage: ''
-        }
-    }
+class list_tutorial extends Component {
     // Load data from backend after the components have mounted
     componentDidMount() {
-        // Do HTTP Request with Axios
-        axios.get(url_server + 'api/tutorial')
-            // Set the state with recieving data
-            .then(response => this.setState({ tutorials: response.data, isLoading: false }))
-            // Show error message if it is failed
-            .catch(error => this.setState({ errorMessage: error }));
+        this.props.readLaboratory();
     }
     // Generate random colour for various purpose
     getRandomBadgeColor() {
@@ -44,7 +28,7 @@ export default class list_tutorial extends Component {
         }
     }
     render() {
-        const { tutorials, isLoading } = this.state;
+        const { tutorials, isLoading } = this.props.laboratory;
         //console.log(tutorial);
         if (isLoading) {
             return (
@@ -80,3 +64,12 @@ export default class list_tutorial extends Component {
         }
     }
 }
+//Prepare and set the redux store
+const mapStateToProps = (state) => ({ laboratory: state.laboratory })
+
+export default connect(mapStateToProps, { readLaboratory })(list_tutorial)
+
+
+
+
+

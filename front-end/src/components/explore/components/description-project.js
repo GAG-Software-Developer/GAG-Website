@@ -1,120 +1,28 @@
 import React, { Component, Fragment } from 'react'
 import { Container, Spinner, Row } from 'react-bootstrap';
-import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import '../../../styles/navigasi.css';
-import config from '../../../config.json';
+import { connect } from 'react-redux';
+import { readDescriptionProject } from './../../../redux/action/readDescriptionProject';
+import getSkillIcon from './../../essential/icon';
+
 library.add(fab, faCoffee);
-const url_server = config['url_server'];
 
-export default class description_project extends Component {
-    constructor() {
-        super();
-        this.state = {
-            description_project: [],
-            detail_project: [],
-            isLoading: true
-        }
-    }
-
-    //(<a href={link} target="_blank"><p className="text-left" >Download {project_title} Document</p></a>)
+class description_project extends Component {
     componentDidMount() {
-        //Fetch data from backend server
-        axios.get(url_server + 'posting-detail/posting-detail-read?id_posting=' + this.props.id_project)
-            .then(response => this.setState({ description_project: response.data['posting_description'], detail_project: response.data['posting_detail'], isLoading: false }))
-            .catch(error => console.log(error));
+        //Call action to get the project description from server
+        this.props.readDescriptionProject(this.props.id_project);
     }
-    getLogoSkill(name) {
-        switch (name.toLowerCase()) {
-            case "react":
-                return "react"
-                break;
-            case "angular":
-                return "angular"
-                break;
-            case "nodejs":
-                return "node"
-                break;
-            case "expressjs":
-                return "js"
-                break;
-            case "javascript":
-                return "js"
-                break;
-            case "codeigniter":
-                return "php"
-                break;
-            case "laravel":
-                return "laravel"
-                break;
-            case "php":
-                return "php"
-                break;
 
-            case "amazon web services":
-                return "aws"
-                break;
-            case "aws":
-                return "aws"
-                break;
-            case "google firebase":
-                return "google"
-                break;
-            case "mysql":
-                return "buffer"
-                break;
-            case "mongodb":
-                return "buffer"
-                break;
-            case "github":
-                return "github"
-                break;
-            case "user testing":
-                return "wpforms"
-                break;
-            case "swift":
-                return "swift"
-                break;
-            case "user testing":
-                return "angular"
-                break;
-            case "github":
-                return "github"
-                break;
-            case "user research":
-                return "elementor"
-                break;
-            case "design process":
-                return "product-hunt"
-                break;
-            case "physical prototyping":
-                return "simplybuilt"
-                break;
-            case "firebase":
-                return "google"
-                break;
-            case "java":
-                return "java"
-                break;
-            case "aes256":
-                return "expeditedssl"
-                break;
-            case "rsa2048":
-                return "expeditedssl"
-                break;
-            case "adobe xd":
-                return "adobe"
-                break;
-            default:
-                return "elementor"
-                break;
-        }
-    }
     render() {
-        const { description_project, detail_project, isLoading } = this.state;
+
+        const description_project = this.props.descriptionProject.description_project;
+        const detail_project = this.props.descriptionProject.detail_project;
+        const isLoading = this.props.descriptionProject.isLoading;
+
         //Declare values
         var overview = "";
         var description = [];
@@ -129,7 +37,7 @@ export default class description_project extends Component {
         }
 
         //Empty response indicator
-        const dataIsSet = description_project.length == 0 ? false : true;
+        const dataIsSet = description_project.length === 0 ? false : true;
 
         //If still loading from back-end, shows loading screen
         if (isLoading) {
@@ -162,7 +70,7 @@ export default class description_project extends Component {
                                             {
                                                 attribute.map((skill, key) =>
 
-                                                    <li style={{ listStyleType: "none" }} className="float-left mr-4 mb-2"><FontAwesomeIcon icon={['fab', this.getLogoSkill(skill)]} /> {skill}</li>
+                                                    <li style={{ listStyleType: "none" }} className="float-left mr-4 mb-2"><FontAwesomeIcon icon={['fab', getSkillIcon(skill)]} /> {skill}</li>
 
                                                 )
                                             }
@@ -216,4 +124,8 @@ export default class description_project extends Component {
     }
 }
 
+//Prepare and set the redux store
+const mapStateToProps = (state) => ({ descriptionProject: state.descriptionProject })
+
+export default connect(mapStateToProps, { readDescriptionProject })(description_project)
 

@@ -1,43 +1,22 @@
 import React, { Component, Fragment } from 'react';
 import Navigation from '../../essential/navigation';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import { Container, Card, Spinner, Badge, Button } from 'react-bootstrap';
+import { Container, Card } from 'react-bootstrap';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import config from '../../../config.json';
-const id_user = config['id_user'];
-const url_server = config['url_server'];
+import { connect } from 'react-redux';
+import { readContact } from './../../../redux/action/readContact';
 library.add(fab, fas);
 
-export default class contact extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            linkedin: "",
-            email: "",
-            phone_number: "",
-            whatsapp_number: "",
-            github: "",
-            isLoading: true
-        }
-    }
+class contact extends Component {
+
     componentDidMount() {
-        axios.get(url_server + 'user/user-read?id=' + id_user)
-            .then(response => this.setState({
-                linkedin: response.data['linkedin_user'],
-                email: response.data['email_user'],
-                whatsapp_number: response.data['whatsapp_user'],
-                phone_number: response.data['phone_user'],
-                github: response.data['github_user'],
-                isLoading: false
-            }));
+        this.props.readContact();
     }
 
     render() {
-        const { email, phone_number, whatsapp_number, github, linkedin } = this.state;
+        const { email, whatsapp_number, github, linkedin } = this.props.contact;
         return (
             <Fragment>
                 <Navigation selectedPage="contact" />
@@ -110,3 +89,9 @@ export default class contact extends Component {
         )
     }
 }
+
+
+//Prepare and set the redux store
+const mapStateToProps = (state) => ({ contact: state.contact })
+
+export default connect(mapStateToProps, { readContact })(contact)

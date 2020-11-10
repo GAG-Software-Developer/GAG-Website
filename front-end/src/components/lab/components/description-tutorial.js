@@ -2,117 +2,22 @@ import React, { Component, Fragment } from 'react'
 import { Container, Spinner, Row } from 'react-bootstrap';
 import '../../../styles/stylish-portfolio.css'
 import '../../../styles/navigasi.css';
-import axios from 'axios';
-import config from '../../../config.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { connect } from 'react-redux';
+import getSkillIcon from './../../essential/icon';
+import { readDescriptionLaboratory } from './../../../redux/action/readDescriptionLaboratory';
 library.add(fab, faCoffee);
-const url_server = config['url_server'];
 
-export default class description_tutorial extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            description: [],
-            detail: [],
-            isLoading: true
-        }
-    }
+class description_tutorial extends Component {
+
     componentDidMount() {
-        axios.get(url_server + 'api/tutorial-detail?id=' + this.props.id_tutorial)
-            .then(response => this.setState({ description: response.data['tutorial_description'], detail: response.data['tutorial_detail'], isLoading: false }))
-            .catch(error => console.log(error));
-    }
-    getLogoSkill(name) {
-        switch (name.toLowerCase()) {
-            case "react":
-                return "react"
-                break;
-            case "angular":
-                return "angular"
-                break;
-            case "nodejs":
-                return "node"
-                break;
-            case "expressjs":
-                return "js"
-                break;
-            case "javascript":
-                return "js"
-                break;
-            case "codeigniter":
-                return "php"
-                break;
-            case "laravel":
-                return "laravel"
-                break;
-            case "php":
-                return "php"
-                break;
-
-            case "amazon cognito":
-                return "aws"
-                break;
-            case "aws":
-                return "aws"
-                break;
-            case "google firebase":
-                return "google"
-                break;
-            case "mysql":
-                return "buffer"
-                break;
-            case "mongodb":
-                return "buffer"
-                break;
-            case "github":
-                return "github"
-                break;
-            case "user testing":
-                return "wpforms"
-                break;
-            case "swift":
-                return "swift"
-                break;
-            case "user testing":
-                return "angular"
-                break;
-            case "github":
-                return "github"
-                break;
-            case "user research":
-                return "elementor"
-                break;
-            case "design process":
-                return "product-hunt"
-                break;
-            case "physical prototyping":
-                return "simplybuilt"
-                break;
-            case "firebase":
-                return "google"
-                break;
-            case "java":
-                return "java"
-                break;
-            case "aes256":
-                return "expeditedssl"
-                break;
-            case "rsa2048":
-                return "expeditedssl"
-                break;
-            case "adobe xd":
-                return "adobe"
-                break;
-            default:
-                return "elementor"
-                break;
-        }
+        this.props.readDescriptionLaboratory(this.props.id_tutorial);
     }
     render() {
-        const { description, detail, isLoading } = this.state;
+        const { description, detail, isLoading } = this.props.laboratory;
 
         if (description === null) {
             //If the data is not exist
@@ -158,7 +63,7 @@ export default class description_tutorial extends Component {
                                         {
                                             attributes.map((element, key) =>
                                                 <Fragment>
-                                                    <FontAwesomeIcon icon={['fab', this.getLogoSkill(element)]} />  {element} &nbsp;&nbsp;
+                                                    <FontAwesomeIcon icon={['fab', getSkillIcon(element)]} />  {element} &nbsp;&nbsp;
                                                     </Fragment>
                                             )
                                         }
@@ -207,3 +112,7 @@ export default class description_tutorial extends Component {
 
     }
 }
+//Prepare and set the redux store
+const mapStateToProps = (state) => ({ laboratory: state.descriptionLaboratory })
+
+export default connect(mapStateToProps, { readDescriptionLaboratory })(description_tutorial)
