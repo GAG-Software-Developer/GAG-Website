@@ -89,7 +89,7 @@ class description_project extends Component {
                                         (
                                             <Row className="align-items-center mt-5 text-secondary" key={element._id}>
                                                 <div className="col-lg-7 order-lg-2">
-                                                    <img className="img-fluid mb-3 shadow-lg" src={require('../../../assets/projek_images/' + element.image_detail)} alt="image1"></img>
+                                                    <img className="img-fluid mb-3 shadow border rounded" src={require('../../../assets/projek_images/' + element.image_detail)} alt="image1"></img>
                                                 </div>
                                                 <div className="col-lg-5">
                                                     <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>{element.title_detail}</h4>
@@ -100,7 +100,7 @@ class description_project extends Component {
                                             //If odd, shows the data in the right
                                             <Row className="align-items-center mt-5 text-secondary" key={element._id}>
                                                 <div className="col-lg-7 ">
-                                                    <img className="img-fluid mb-3 shadow-lg" src={require('../../../assets/projek_images/' + element.image_detail)} alt="image1"></img>
+                                                    <img className="img-fluid mb-3 shadow border rounded" src={require('../../../assets/projek_images/' + element.image_detail)} alt="image1"></img>
                                                 </div>
                                                 <div className="col-lg-5">
                                                     <h4 className="text-left font-weight-bold" style={{ color: "lightseagreen" }}>{element.title_detail}</h4>

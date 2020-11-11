@@ -87,7 +87,7 @@ class About extends Component {
                                         </tr>
                                         <tr>
                                             <td className="text-right" style={{ color: "lightcoral" }}><strong>Codename</strong></td>
-                                            <td>: Amsterdam I</td>
+                                            <td>: Amsterdam</td>
                                         </tr>
                                         <tr>
                                             <td className="text-right" style={{ color: "lightcoral" }}><strong>Version</strong></td>

@@ -10,6 +10,9 @@
 @import url(https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Faster+One&family=Libre+Barcode+39+Extended+Text&family=Zilla+Slab+Highlight:wght@700&display=swap);
 @charset "UTH-8";
 
+@import url(https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap);
+@charset "UTH-8";
+
 @font-face {
   font-family: CheltenhamBook;
   src: url(./assets/fonts/CheltenhamStdBook.otf);
@@ -41,7 +44,7 @@ p {
   font-family: "Roboto", sans-serif;
 }
 
-code {
+.code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
