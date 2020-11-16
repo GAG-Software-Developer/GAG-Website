@@ -10,10 +10,15 @@ import Contact from './components/contact/pages/contact';
 import Laboratory from './components/lab/pages/laboratory';
 import Detail_Tutorial from './components/lab/pages/detail-tutorial';
 
+//Redux
+import { createStore, combineReducers } from 'redux';
+import projectReducer from './redux/reducer/projectReducer';
+
+const store = createStore(projectReducer);
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-light">
       <Router>
 
         <Route exact path='/' component={Explore} />

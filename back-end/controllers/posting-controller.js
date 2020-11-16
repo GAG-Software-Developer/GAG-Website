@@ -118,6 +118,12 @@ exports.posting_read = async (request, response) => {
     //     });
     // });
 };
+
+//POST  - posting 
+//PUT   - posting
+//GET   - posting
+//DELETE   - posting
+
 exports.posting_update = async (request, response) => {
     const posting_id = request.params.id;
     const { title_posting, quote_posting, type_posting, owner_id_posting, owner_name_posting, attribute, link_posting } = request.body;

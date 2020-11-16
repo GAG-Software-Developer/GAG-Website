@@ -1,6 +1,12 @@
 {
   "id_user": "5f4c9eb7c715f9b7f943fe92",
+<<<<<<< HEAD
   "id_user_galih": "5f4ca3ff5f92f5babcd55c65",
   "url_server_localhost": "http://localhost:8000/",
   "url_server": "https://personal-portfolio-289210.et.r.appspot.com/"
 }
+=======
+  "url_server_local": "http://localhost:8000/",
+  "url_server": "https://backend-portfolio-292208.et.r.appspot.com/"
+}
+>>>>>>> 8c4014c01798cb2a2f7f553a7c8d206f99d61a8f

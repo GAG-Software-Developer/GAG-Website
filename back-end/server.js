@@ -12,9 +12,8 @@ app.listen(8000, () => {
 app.use(express.json({
     extended: false
 }))
-app.get('/test', (request, response) => {
-    console.log('heyy you are connected now!');
-    response.send('okey');
+app.get('/', (request, response) => {
+    response.send('Hi, welcome to Giovanni Works and Goa Galih');
 });
 //import route
 app.use('/api', require('./routes/posting'));

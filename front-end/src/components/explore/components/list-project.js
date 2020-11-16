@@ -3,22 +3,14 @@ import { Container, Card, Spinner, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../../../styles/stylish-portfolio.css'
 import '../../../styles/navigasi.css';
-import axios from 'axios';
-import config from '../../../config.json';
-const id_user = config['id_user'];
-const url_server = config['url_server'];
+import { connect } from 'react-redux';
+import { readProjects } from './../../../redux/action/readProjects';
 
-export default class list_project extends Component {
-    constructor() {
-        super();
-        this.state = {
-            projects: [],
-            isLoading: true
-        }
-    }
+class list_project extends Component {
+
     componentDidMount() {
-        axios.get(url_server + 'posting/posting-read?id=' + id_user)
-            .then(response => this.setState({ projects: response.data, isLoading: false }));
+        //Call action to get the projects list from server
+        this.props.readProjects();
     }
     getRandomBadgeColor() {
         const color = Math.floor(Math.random() * (7 - 1)) + 1;
@@ -31,11 +23,11 @@ export default class list_project extends Component {
             case 6: return "info"
             default: return "dark"
         }
-
     }
     render() {
-        const { isLoading, projects } = this.state;
-        //console.log(projects);
+        const projects = this.props.project.projects;
+        const isLoading = this.props.project.isLoading;
+
         if (isLoading) {
             return (
                 <Fragment>
@@ -48,23 +40,24 @@ export default class list_project extends Component {
             return (
                 <section className="content-section" id="portfolio">
                     <Container>
+                        <h1>{this.props.value}</h1>
                         <div className="row no-gutters">
                             {projects.map((project) =>
                                 <div className="col-lg-4" key={project._id}>
                                     <Link className="btn" to={'/Detail-Projek/' + project._id}>
-                                        <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item">
-                                            <div className="portfolio-item">
-                                                <img className="img-fluid" src={require('../../../assets/projek_images/' + project.image_posting)} alt="" />
+                                        <Card className="border-1 shadow-sm p-3 mb-5 portfolio-item" style={{ borderRadius: "15px" }}>
+                                            <div className="portfolio-item ">
+                                                <img className="img-fluid rounded" src={require('../../../assets/projek_images/' + project.image_posting)} alt="" />
                                             </div>
-                                            <Card.Body>
-                                                <Card.Title>{project.title_posting}</Card.Title>
-                                                <footer className="blockquote-footer">
+                                            <Card.Body >
+                                                <Card.Title className="mb-0">{project.title_posting}</Card.Title>
+                                                <footer className="blockquote-footer mt-1 mb-1">
                                                     <small className="text-muted">
                                                         <cite title="Source Title">{project.quote_posting}</cite>
                                                     </small>
                                                 </footer>
                                                 <footer className="footer">
-                                                    <Badge pill variant={(project.type_posting === "UX Research") ? "info" : (project.type_posting === "Mobile Application") ? "success" : (project.type_posting === "Fullstack") ? "danger" : "warning"}>{project.type_posting}</Badge>
+                                                    <Badge className="border shadow-sm" pill variant={(project.type_posting === "UX Research") ? "info" : (project.type_posting === "Mobile Application") ? "success" : (project.type_posting === "Fullstack") ? "danger" : "warning"}>{project.type_posting}</Badge>
                                                 </footer>
                                             </Card.Body>
                                         </Card>
@@ -78,5 +71,12 @@ export default class list_project extends Component {
         }
     }
 }
+
+//Prepare and set the redux store
+const mapStateToProps = (state) => ({ project: state.projects })
+
+export default connect(mapStateToProps, { readProjects })(list_project)
+
+
 
 

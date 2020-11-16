@@ -1,43 +1,22 @@
 import React, { Component, Fragment } from 'react';
 import Navigation from '../../essential/navigation';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import { Container, Card, Spinner, Badge, Button } from 'react-bootstrap';
+import { Container, Card } from 'react-bootstrap';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import config from '../../../config.json';
-const id_user = config['id_user'];
-const url_server = config['url_server'];
+import { connect } from 'react-redux';
+import { readContact } from './../../../redux/action/readContact';
 library.add(fab, fas);
 
-export default class contact extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            linkedin: "",
-            email: "",
-            phone_number: "",
-            whatsapp_number: "",
-            github: "",
-            isLoading: true
-        }
-    }
+class contact extends Component {
+
     componentDidMount() {
-        axios.get(url_server + 'user/user-read?id=' + id_user)
-            .then(response => this.setState({
-                linkedin: response.data['linkedin_user'],
-                email: response.data['email_user'],
-                whatsapp_number: response.data['whatsapp_user'],
-                phone_number: response.data['phone_user'],
-                github: response.data['github_user'],
-                isLoading: false
-            }));
+        this.props.readContact();
     }
 
     render() {
-        const { email, phone_number, whatsapp_number, github, linkedin } = this.state;
+        const { email, whatsapp_number, github, linkedin } = this.props.contact;
         return (
             <Fragment>
                 <Navigation selectedPage="contact" />
@@ -45,22 +24,22 @@ export default class contact extends Component {
                     <div className="row no-gutter">
 
                         <div className="col-lg-4">
-                            <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item w-100">
+                            <Card className="border shadow-sm p-3 mb-5 bg-white portfolio-item w-100" style={{ borderRadius: "15px" }}>
                                 <Card.Body>
-                                    <Card.Title><h1><FontAwesomeIcon icon={['fas', 'envelope']} /></h1></Card.Title>
-                                    <Card.Subtitle className="mb-2 text-muted">Email</Card.Subtitle>
-                                    <Card.Text> {email} </Card.Text>
+                                    <Card.Title><h1><FontAwesomeIcon style={{ color: "#e94560" }} icon={['fas', 'envelope']} /></h1></Card.Title>
+                                    <Card.Subtitle className="text-muted">Email</Card.Subtitle>
+                                    <Card.Text className="san-serif-font"><small>{email}</small></Card.Text>
                                 </Card.Body>
                             </Card>
                         </div>
                         <div className="col-lg-4">
-                            <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item w-100">
+                            <Card className="border shadow-sm p-3 mb-5 bg-white portfolio-item w-100" style={{ borderRadius: "15px" }}>
                                 <a href={"https://wa.me/" + whatsapp_number} target="_blank" style={{ textDecoration: "none", color: "black" }}>
 
                                     <Card.Body>
-                                        <Card.Title><h1><FontAwesomeIcon icon={['fab', 'whatsapp']} /></h1></Card.Title>
-                                        <Card.Subtitle className="mb-2 text-muted">WhatsApp</Card.Subtitle>
-                                        <Card.Text> <b>(+61)</b>426807941 </Card.Text>
+                                        <Card.Title><h1><FontAwesomeIcon style={{ color: "#25D366" }} icon={['fab', 'whatsapp']} /></h1></Card.Title>
+                                        <Card.Subtitle className="text-muted">WhatsApp</Card.Subtitle>
+                                        <Card.Text className="san-serif-font"><small><b>(+61)</b> 426807941</small></Card.Text>
                                     </Card.Body>
                                 </a>
                             </Card>
@@ -68,24 +47,24 @@ export default class contact extends Component {
                         </div>
                         <div className="col-lg-4">
 
-                            <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item w-100">
+                            <Card className="border shadow-sm p-3 mb-5 bg-white portfolio-item w-100" style={{ borderRadius: "15px" }}>
 
                                 <Card.Body>
-                                    <Card.Title><h1><FontAwesomeIcon icon={['fas', 'phone']} /></h1></Card.Title>
-                                    <Card.Subtitle className="mb-2 text-muted">Phone</Card.Subtitle>
-                                    <Card.Text> <b>(+62)</b>81231466200 </Card.Text>
+                                    <Card.Title><h1><FontAwesomeIcon style={{ color: "#03c4a1" }} icon={['fas', 'phone']} /></h1></Card.Title>
+                                    <Card.Subtitle className="text-muted">Phone</Card.Subtitle>
+                                    <Card.Text className="san-serif-font"><small><b>(+62)</b> 81231466200</small></Card.Text>
                                 </Card.Body>
                             </Card>
 
                         </div>
                         <div className="col-lg-4">
 
-                            <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item w-100">
+                            <Card className="border shadow-sm p-3 mb-5 bg-white portfolio-item w-100" style={{ borderRadius: "15px" }}>
                                 <a href={github} target="_blank" style={{ textDecoration: "none", color: "black" }}>
                                     <Card.Body>
                                         <Card.Title><h1><FontAwesomeIcon icon={['fab', 'github']} /></h1></Card.Title>
-                                        <Card.Subtitle className="mb-2 text-muted">GitHub</Card.Subtitle>
-                                        <Card.Text> giovannitjahjono </Card.Text>
+                                        <Card.Subtitle className="text-muted">GitHub</Card.Subtitle>
+                                        <Card.Text className="san-serif-font"><small>giovannitjahjono</small></Card.Text>
                                     </Card.Body>
                                 </a>
                             </Card>
@@ -93,12 +72,12 @@ export default class contact extends Component {
                         </div>
                         <div className="col-lg-4">
 
-                            <Card className="border-0 shadow p-3 mb-5 bg-white rounded portfolio-item w-100">
+                            <Card className="border shadow-sm p-3 mb-5 bg-white portfolio-item w-100" style={{ borderRadius: "15px" }}>
                                 <a href={linkedin} target="_blank" style={{ textDecoration: "none", color: "black" }}>
                                     <Card.Body>
-                                        <Card.Title><h1><FontAwesomeIcon icon={['fab', 'linkedin']} /></h1></Card.Title>
-                                        <Card.Subtitle className="mb-2 text-muted">LinkedIn</Card.Subtitle>
-                                        <Card.Text> giovannitjahjono </Card.Text>
+                                        <Card.Title><h1><FontAwesomeIcon style={{ color: "#0e76a8" }} icon={['fab', 'linkedin']} /></h1></Card.Title>
+                                        <Card.Subtitle className="text-muted">LinkedIn</Card.Subtitle>
+                                        <Card.Text className="san-serif-font" ><small>giovannitjahjono</small></Card.Text>
                                     </Card.Body>
                                 </a>
                             </Card>
@@ -110,3 +89,9 @@ export default class contact extends Component {
         )
     }
 }
+
+
+//Prepare and set the redux store
+const mapStateToProps = (state) => ({ contact: state.contact })
+
+export default connect(mapStateToProps, { readContact })(contact)
