@@ -17,8 +17,8 @@ app.get('/test', (request, response) => {
     response.send('okey');
 });
 //import route
-app.use('/posting', require('./routes/posting'));
-app.use('/posting-detail', require('./routes/posting-detail'));
-app.use('/user', require('./routes/user'));
+app.use('/api', require('./routes/posting'));
+app.use('/api', require('./routes/posting-detail'));
+app.use('/api', require('./routes/user'));
 app.use('/api', require('./routes/tutorial'));
 app.use('/api', require('./routes/tutorial-detail'));

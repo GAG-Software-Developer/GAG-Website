@@ -6,7 +6,7 @@ const { Model } = require('mongoose');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 
-router.post('/user-create', (request, response) => {
+router.post('/user', (request, response) => {
 
     const user = new user_model({
         fullname_user: request.body.fullname_user,
@@ -25,12 +25,12 @@ router.post('/user-create', (request, response) => {
     user.save();
     response.send(user);
 });
-router.get('/user-read', async (request, response) => {
+router.get('/user', async (request, response) => {
     const id_owner = request.query.id;
     const read_user = await user_model.findOne({ _id: id_owner });
     response.send(read_user);
 });
-router.post('/posting-update', async (request, response) => {
+router.put('/user', async (request, response) => {
     const user_id = request.body.user_id;
     //await posting_model.findByIdAndUpdate(id, { "owner_posting": "cah" });
     await posting_model.findByIdAndUpdate(user_id, {
@@ -48,7 +48,7 @@ router.post('/posting-update', async (request, response) => {
     });
     response.send('Updated!');
 });
-router.post('/posting-delete', async (request, response) => {
+router.delete('/user', async (request, response) => {
     const user_id = request.body.user_id;
     await posting_model.findByIdAndDelete({ _id: user_id });
     response.send('deleted!');

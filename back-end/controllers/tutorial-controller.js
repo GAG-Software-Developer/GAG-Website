@@ -11,29 +11,45 @@ exports.tutorial_create = async (request, response) => {
         writer_name_tutorial: request.body.writer_name_tutorial,
         attribute_tutorial: request.body.attribute_tutorial
     });
-    if (posting.save()) {
-        response.send(posting);
-    } else {
-        response.send("Failed");
-    }
-
-
+    posting.save().then(
+        () => {
+            response.status(201).json({
+                message: "Created",
+                data: posting
+            })
+        }
+    ).catch(
+        (error) => {
+            response.status(400).json({
+                error: error
+            })
+        }
+    )
 };
 exports.tutorial_read = async (request, response) => {
     //id_owner Ivan = 5f4c9eb7c715f9b7f943fe92
     //id_owner Galih = 5f4ca3ff5f92f5babcd55c65
 
-    //Find project based on the owner id
-    const read_tutorial = await tutorial_model.find();
-    //const read_posting = await posting_model.find()
-    //Send the result back
-    response.send(read_tutorial);
-
+    //Find project based on the owner id and Send the result back
+    tutorial_model.find().then(
+        (result) => {
+            response.status(200).json({
+                message: "data is found",
+                data: result
+            })
+        }
+    ).catch(
+        (error) => {
+            response.status(400).json({
+                error: error
+            })
+        }
+    );
 };
 exports.tutorial_update = async (request, response) => {
     const user_id = request.body.user_id;
     //await posting_model.findByIdAndUpdate(id, { "owner_posting": "cah" });
-    await tutorial_model.findByIdAndUpdate(user_id, {
+    tutorial_model.findByIdAndUpdate(user_id, {
         $set: {
             title_posting: request.body.title_posting,
             image_posting: request.body.image_posting,
@@ -45,11 +61,33 @@ exports.tutorial_update = async (request, response) => {
             attribute: request.body.attribute,
             link_posting: request.body.link_posting
         }
-    });
-    response.send('Updated!');
+    }).then(
+        () => {
+            response.status(200).json({
+                message: "Updated"
+            })
+        }
+    ).catch(
+        (error) => {
+            response.status(400).json({
+                error: error
+            })
+        }
+    );
 };
 exports.tutorial_delete = async (request, response) => {
     const user_id = request.body.user_id;
-    await tutorial_model.findByIdAndDelete({ _id: user_id });
-    response.send('deleted!');
+    tutorial_model.findByIdAndDelete({ _id: user_id }).then(
+        () => {
+            response.status(200).json({
+                message: "Deleted"
+            })
+        }
+    ).catch(
+        (error) => {
+            response.status(400).json({
+                error: error
+            })
+        }
+    );
 };
