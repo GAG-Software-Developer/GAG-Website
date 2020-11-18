@@ -6,7 +6,6 @@ const url_server = config['url_server'];
 
 export const readAbout = () => async dispatch => {
     try {
-
         const result = await axios.get(url_server + 'user/user-read?id=' + id_user);
         dispatch({
             type: 'STORE_ABOUT',

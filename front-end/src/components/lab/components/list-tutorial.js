@@ -11,7 +11,9 @@ import { readLaboratory } from './../../../redux/action/readLaboratory';
 class list_tutorial extends Component {
     // Load data from backend after the components have mounted
     componentDidMount() {
-        this.props.readLaboratory();
+        if (this.props.laboratory.isLoading) {
+            this.props.readLaboratory();
+        }
     }
     // Generate random colour for various purpose
     getRandomBadgeColor() {

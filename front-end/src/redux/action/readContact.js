@@ -18,7 +18,7 @@ export const readContact = () => async dispatch => {
     catch (e) {
         dispatch({
             type: 'ERROR',
-            payload: console.log(e),
+            payload: console.log(e)
         })
     }
 }

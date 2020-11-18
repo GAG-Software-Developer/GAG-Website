@@ -1,0 +1,129 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
+@charset "UTF-8";
+
+@import url(https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap);
+@charset "UTH-8";
+
+@import url(https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap);
+@charset "UTH-8";
+
+@import url(https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Faster+One&family=Libre+Barcode+39+Extended+Text&family=Zilla+Slab+Highlight:wght@700&display=swap);
+@charset "UTH-8";
+
+@import url(https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap);
+@charset "UTH-8";
+
+@font-face {
+  font-family: CheltenhamBook;
+  src: url(./assets/fonts/CheltenhamStdBook.otf);
+}
+@font-face {
+  font-family: CheltenhamBold;
+  src: url(./assets/fonts/CheltenhamStdBold.otf);
+}
+@font-face {
+  font-family: FontHelvetica;
+  src: url(./assets/fonts/FreeSans.ttf);
+}
+body {
+  margin: 0;
+  font-family: "Roboto";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+p {
+  font-family: "CheltenhamBook";
+  font-size: 20px;
+  line-height: 1.7;
+}
+.logo {
+  font-family: "Zilla Slab Highlight", cursive;
+}
+
+.san-serif-font {
+  font-family: "Roboto", sans-serif;
+}
+
+.code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.navbar {
+  background-color: #232931;
+}
+* {
+  background-color: #232931;
+  color: white;
+}
+
+@import url(https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Archivo+Black&family=Notable&family=Passion+One:wght@400;700&display=swap);
+@charset "UTF-8";
+
+.font-header {
+  /*
+  font-family: 'Archivo Black', sans-serif;
+  font-family: 'Caveat', cursive;
+  */
+  font-family: "Montserrat", sans-serif;
+}
+
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap);
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap);
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap);
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap);
+@charset "UTF-8";
+
+@font-face {
+  font-family: "ITC";
+  src: local("ITC"), url(./assets/fonts/CheltenhamStdBook.otf) format("woff");
+}
+@font-face {
+  font-family: "ITC Bold";
+  src: local("ITC Bold"),
+    url(./assets/fonts/CheltenhamStdBold.otf) format("woff");
+}
+.handwriting {
+  font-family: "ITC";
+}
+.itc-bold {
+  font-family: "ITC Bold";
+}
+.monospace {
+  font-family: "IBM Plex Mono", monospace;
+}
+.main-header {
+  font-family: "Josefin Sans", sans-serif;
+}
+.black-background {
+  background-color: black;
+}
+
+.black-header {
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+.black-width-full {
+  background-color: black;
+  display: flex;
+  min-width: 100%;
+  flex-direction: column;
+  flex: start;
+  color: white;
+}
+.body {
+  background-color: black;
+}
+.bg {
+  background-color: lightcoral;
+}
+.blurEffect {
+  filter: blur(5px);
+}

@@ -12,7 +12,10 @@ library.add(fab, fas);
 class contact extends Component {
 
     componentDidMount() {
-        this.props.readContact();
+        if (this.props.contact.isLoading) {
+            this.props.readContact();
+        }
+
     }
 
     render() {

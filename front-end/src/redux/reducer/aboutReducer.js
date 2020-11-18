@@ -9,9 +9,7 @@ const initialState = {
 }
 
 export default function (state = initialState, action) {
-
     switch (action.type) {
-
         case 'STORE_ABOUT':
             return {
                 ...state,
@@ -25,5 +23,4 @@ export default function (state = initialState, action) {
             }
         default: return state
     }
-
 }

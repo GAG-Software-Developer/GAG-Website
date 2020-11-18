@@ -12,7 +12,9 @@ library.add(fab, faCoffee);
 
 class About extends Component {
     componentDidMount() {
-        this.props.readAbout();
+        if (this.props.about.isLoading) {
+            this.props.readAbout();
+        }
     }
     render() {
         const { fullname, photo, educations, skills, description, work_experiences, isLoading } = this.props.about;

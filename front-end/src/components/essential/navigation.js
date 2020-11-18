@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import { Navbar, Nav, Container, NavbarBrand } from 'react-bootstrap';
-import '../../styles/navigasi.css';
 
 export default function navigation(param) {
     return (

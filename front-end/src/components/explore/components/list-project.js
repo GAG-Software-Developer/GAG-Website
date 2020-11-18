@@ -9,8 +9,12 @@ import { readProjects } from './../../../redux/action/readProjects';
 class list_project extends Component {
 
     componentDidMount() {
-        //Call action to get the projects list from server
-        this.props.readProjects();
+        //Checking, is the state ready
+        if (this.props.project.isLoading) {
+            //Call action to get the projects list from server
+            this.props.readProjects();
+        }
+
     }
     getRandomBadgeColor() {
         const color = Math.floor(Math.random() * (7 - 1)) + 1;
