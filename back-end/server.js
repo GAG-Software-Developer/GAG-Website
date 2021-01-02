@@ -4,9 +4,10 @@ const cors = require('cors');
 const connectDB = require('./config/database');
 connectDB();
 app.use(cors());
+const port = 5100;
 //running server pada port yang tersedia contoh 4000/8000
-app.listen(5100, () => {
-    console.log('the server is listening on port 8000!!!');
+app.listen(port, () => {
+    console.log('the server is listening on port ' + port);
 });
 //body parser untuk body bisa ke convert dan terbaca (request.body.name)
 app.use(express.json({
