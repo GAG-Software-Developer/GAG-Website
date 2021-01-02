@@ -5,7 +5,7 @@ const connectDB = require('./config/database');
 connectDB();
 app.use(cors());
 //running server pada port yang tersedia contoh 4000/8000
-app.listen(8000, () => {
+app.listen(5100, () => {
     console.log('the server is listening on port 8000!!!');
 });
 //body parser untuk body bisa ke convert dan terbaca (request.body.name)
